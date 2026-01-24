@@ -6,67 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        body { margin: 0; font-family: Arial, Helvetica, sans-serif; }
+    body { 
+        margin: 0; 
+        font-family: Arial, Helvetica, sans-serif; 
+        background-color: #fff0f6;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background-color: #1f2933;
-        }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        background-color: #ff4da6;
+    }
 
-        .logo img { height: 50px; }
+    .logo img { height: 50px; }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-            margin: 0;
-            padding: 0;
-        }
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+    }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 16px;
-        }
+    nav ul li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
-        nav ul li a:hover { color: #38bdf8; }
+    nav ul li a:hover { color: #ffe4f2; }
 
-        .hero {
-            padding: 80px 40px;
-            text-align: center;
-            background-color: #f1f5f9;
-        }
+    .hero {
+        padding: 80px 40px;
+        text-align: center;
+        background: linear-gradient(135deg, #ffc1e3, #ffd6ec);
+    }
 
-        .hero h1 { font-size: 42px; margin-bottom: 20px; }
+    .hero h1 { 
+        font-size: 42px; 
+        margin-bottom: 20px; 
+        color: #b30059;
+    }
 
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
+    .hero p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        color: #4d004d;
+    }
 
-        .btn-hero {
-            padding: 12px 28px;
-            background-color: #38bdf8;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
+    .btn-hero {
+        padding: 12px 28px;
+        background-color: #ff1493;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 15px;
+    }
 
-        .categorias { padding: 60px 40px; text-align: center; }
+    .btn-hero:hover {
+        background-color: #e60073;
+    }
 
-        .contenedor-categorias {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+    .categorias { 
+        padding: 60px 40px; 
+        text-align: center; 
+    }
 
-        .tarjeta {
-            background: #f8fafc;
-            padding: 30px;
-            width: 260px;
+    .categorias h2 {
+        color: #b30059;
+        margin-bottom: 30px;
+    }
+
+    .contenedor-categorias {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tarjeta {
+        background: #ffffff;
+        padding: 30px;
+        width: 260px;
+        text-decoration: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        color: #b30059;
+        font-size: 20px;
+        font-weight: bold;
+        transition: transform 0.2s;
+    }
+
+    .tarjeta:hover {
+        transform: scale(1.05);
+        background-color: #ffe4f2;
+    }
             text-decoration: none
