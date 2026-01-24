@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ojos | Bloom Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { margin:0; font-family:Arial, sans-serif; background:#fff0f6; text-align:center; }
+header { background:#ff4da6; padding:15px; }
+header h2 { color:white; }
+section { padding:60px 20px; }
+img { width:350px; border-radius:12px; }
+.btn { padding:12px 28px; background:#ff1493; color:white; text-decoration:none; border-radius:30px; font-weight:bold; }
+.btn:hover { background:#e60073; }
+</style>
+</head>
+<body>
+
+<header><h2>Ojos - Bloom Beauty</h2></header>
+
+<section>
+    <h1>Productos para Ojos</h1>
+    <p>Sombras, máscara y delineadores para una mirada impactante ✨</p>
+    <img src="https://media.istockphoto.com/id/947033060/photo/beauty-woman-makeup-beautiful-woman-applying-black-mascara.jpg?s=612x612&w=is&k=20&c=4NMRoSWe1uOKg3IZa8z2UaL00EgEm_ZCYRk7--i6LcI=" alt="Maquillaje Ojos">
+    <br><br>
+    <a href="index.html" class="btn">Volver al Inicio</a>
+</section>
+
+</body>
+</html>
