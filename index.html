@@ -1,91 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Bloom Beauty | Tienda de Maquillaje</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom Beauty | Tienda de Maquillaje</title>
 
-    <style>
-        body { margin: 0; font-family: Arial, Helvetica, sans-serif; background:#fff0f5; }
+<style>
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#fff; }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background-color: #ff69b4;
-        }
+/* HEADER */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#ffb6c1;
+}
+header h2 { margin:0; color:white; }
+nav ul { list-style:none; display:flex; gap:25px; padding:0; margin:0; }
+nav a { text-decoration:none; color:white; font-weight:bold; }
 
-        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
-        nav ul li a { text-decoration: none; color: white; font-size: 16px; font-weight:bold; }
+/* HERO */
+.hero {
+    text-align:center;
+    padding:80px 20px;
+    background:#ffe4ec;
+}
+.hero h1 { font-size:42px; margin-bottom:10px; }
+.hero p { max-width:600px; margin:auto; margin-bottom:25px; }
+.btn {
+    background:#ff69b4;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:8px;
+}
 
-        .hero {
-            padding: 80px 40px;
-            text-align: center;
-            background: linear-gradient(#ffc0cb, #fff0f5);
-        }
+/* SECCIONES */
+section { padding:60px 20px; text-align:center; }
 
-        .hero h1 { font-size: 42px; margin-bottom: 20px; color:#d63384; }
-        .hero p { font-size: 18px; max-width: 600px; margin: 0 auto 30px; }
+/* CATEGORIAS */
+.categorias div {
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+.tarjeta {
+    background:#fff0f5;
+    padding:25px;
+    width:200px;
+    border-radius:12px;
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
-        .btn-hero {
-            padding: 12px 28px;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+/* PRODUCTOS */
+.productos-grid {
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+.producto {
+    background:#ffe4ec;
+    padding:20px;
+    border-radius:12px;
+    width:200px;
+}
 
-        .categorias { padding: 60px 40px; text-align: center; }
-        .contenedor-categorias { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
-
-        .tarjeta {
-            background: white;
-            padding: 30px;
-            width: 200px;
-            text-decoration: none;
-            color: #d63384;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            font-weight: bold;
-        }
-
-        .info {
-            padding:60px;
-            text-align:center;
-            background:white;
-        }
-
-        footer {
-            background-color:#ff69b4;
-            color:white;
-            text-align:center;
-            padding:20px;
-            margin-top:40px;
-        }
-    </style>
+/* FOOTER */
+footer {
+    background:#ffb6c1;
+    color:white;
+    text-align:center;
+    padding:30px 10px;
+    margin-top:40px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h2 style="color:white;">Bloom Beauty</h2>
+    <h2>Bloom Beauty</h2>
     <nav>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#empresa">Sobre Bloom Beauty</a></li>
-            <li><a href="#categorias">Productos</a></li>
+            <li><a href="#marca">Marca</a></li>
+            <li><a href="#categorias">Categorías</a></li>
+            <li><a href="#productos">Productos</a></li>
         </ul>
     </nav>
 </header>
 
+<!-- HERO -->
 <section id="inicio" class="hero">
     <h1>Bloom Beauty</h1>
-    <p>Maquillaje que realza tu belleza, resalta tu estilo y hace florecer tu confianza.</p>
-    <a href="https://wa.me/593959881164" class="btn-hero">Pedir por WhatsApp</a>
+    <p>Maquillaje y productos de belleza que realzan tu estilo y tu confianza.</p>
+    <a href="https://wa.me/593959881164" class="btn">Contáctanos</a>
 </section>
 
-<section id="empresa" class="info">
-    <h2>Venta y Distribución de Productos de Belleza</h2>
-    <p>Bloom Beauty es una tienda online dedicada a la venta y distribución de productos de maquillaje, cuidado facial y b
+<!-- MARCA -->
+<section id="marca">
+    <h2>Bloom Beauty - Venta y Distribución de Cosméticos</h2>
+    <p>Bloom Beauty es una tienda online dedicada a la venta y distribución de maquillaje y productos de belleza. Ofrecemos artículos de calidad, modernos y accesibles para resaltar la belleza natural y brindar una experiencia de compra fácil y segura.</p>
+</section>
 
+<!-- CATEGORIAS -->
+<section id="categorias" class="categorias" style="background:#ffe4ec;">
+    <h2>Categorías</h2>
+    <div>
+        <a href="ojos.html" class="tarjeta">Ojos</a>
+        <a href="labios.html" class="tarjeta">Labios</a>
+        <a href="rostro.html" class="tarjeta">Rostro</a>
+        <a href="cuerpo.html" class="tarjeta">Cuerpo</a>
+    </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos">
+    <h2>Productos Destacados</h2>
+    <div class="productos-grid">
+        <div class="producto">
+            <h3>Paleta de Sombras</h3>
+            <p>$12.00</p>
+        </div>
+        <div class="producto">
+            <h3>Labial Matte</h3>
+            <p>$6.00</p>
+        </div>
+        <div class="producto">
+            <h3>Base Líquida</h3>
+            <p>$10.00</p>
+        </div>
+        <div class="producto">
+            <h3>Crema Corporal</h3>
+            <p>$8.00</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Bloom Beauty | Tienda Online de Maquillaje
+</footer>
+
+</body>
+</html>
