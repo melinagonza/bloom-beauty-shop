@@ -1,157 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bloom Beauty | Tienda de Maquillaje</title>
+    <meta charset="UTF-8">
+    <title>Bloom Beauty | Tienda de Maquillaje</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#fff; }
+    <style>
+        body { margin: 0; font-family: Arial, Helvetica, sans-serif; }
 
-/* HEADER */
-header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background:#ffb6c1;
-}
-header h2 { margin:0; color:white; }
-nav ul { list-style:none; display:flex; gap:25px; padding:0; margin:0; }
-nav a { text-decoration:none; color:white; font-weight:bold; }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #1f2933;
+        }
 
-/* HERO */
-.hero {
-    text-align:center;
-    padding:80px 20px;
-    background:#ffe4ec;
-}
-.hero h1 { font-size:42px; margin-bottom:10px; }
-.hero p { max-width:600px; margin:auto; margin-bottom:25px; }
-.btn {
-    background:#ff69b4;
-    color:white;
-    padding:12px 25px;
-    text-decoration:none;
-    border-radius:8px;
-}
+        .logo img { height: 50px; }
 
-/* SECCIONES */
-section { padding:60px 20px; text-align:center; }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
 
-/* CATEGORIAS */
-.categorias div {
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-    margin-top:30px;
-}
-.tarjeta {
-    background:#fff0f5;
-    padding:25px;
-    width:200px;
-    border-radius:12px;
-    text-decoration:none;
-    color:#333;
-    font-weight:bold;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+        }
 
-/* PRODUCTOS */
-.productos-grid {
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-    margin-top:30px;
-}
-.producto {
-    background:#ffe4ec;
-    padding:20px;
-    border-radius:12px;
-    width:200px;
-}
+        nav ul li a:hover { color: #38bdf8; }
 
-/* FOOTER */
-footer {
-    background:#ffb6c1;
-    color:white;
-    text-align:center;
-    padding:30px 10px;
-    margin-top:40px;
-}
-</style>
-</head>
+        .hero {
+            padding: 80px 40px;
+            text-align: center;
+            background-color: #f1f5f9;
+        }
 
-<body>
+        .hero h1 { font-size: 42px; margin-bottom: 20px; }
 
-<header>
-    <h2>Bloom Beauty</h2>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#marca">Marca</a></li>
-            <li><a href="#categorias">Categorías</a></li>
-            <li><a href="#productos">Productos</a></li>
-        </ul>
-    </nav>
-</header>
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
 
-<!-- HERO -->
-<section id="inicio" class="hero">
-    <h1>Bloom Beauty</h1>
-    <p>Maquillaje y productos de belleza que realzan tu estilo y tu confianza.</p>
-    <a href="https://wa.me/593959881164" class="btn">Contáctanos</a>
-</section>
+        .btn-hero {
+            padding: 12px 28px;
+            background-color: #38bdf8;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
 
-<!-- MARCA -->
-<section id="marca">
-    <h2>Bloom Beauty - Venta y Distribución de Cosméticos</h2>
-    <p>Bloom Beauty es una tienda online dedicada a la venta y distribución de maquillaje y productos de belleza. Ofrecemos artículos de calidad, modernos y accesibles para resaltar la belleza natural y brindar una experiencia de compra fácil y segura.</p>
-</section>
+        .categorias { padding: 60px 40px; text-align: center; }
 
-<!-- CATEGORIAS -->
-<section id="categorias" class="categorias" style="background:#ffe4ec;">
-    <h2>Categorías</h2>
-    <div>
-        <a href="ojos.html" class="tarjeta">Ojos</a>
-        <a href="labios.html" class="tarjeta">Labios</a>
-        <a href="rostro.html" class="tarjeta">Rostro</a>
-        <a href="cuerpo.html" class="tarjeta">Cuerpo</a>
-    </div>
-</section>
+        .contenedor-categorias {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-<!-- PRODUCTOS -->
-<section id="productos">
-    <h2>Productos Destacados</h2>
-    <div class="productos-grid">
-        <div class="producto">
-            <h3>Paleta de Sombras</h3>
-            <p>$12.00</p>
-        </div>
-        <div class="producto">
-            <h3>Labial Matte</h3>
-            <p>$6.00</p>
-        </div>
-        <div class="producto">
-            <h3>Base Líquida</h3>
-            <p>$10.00</p>
-        </div>
-        <div class="producto">
-            <h3>Crema Corporal</h3>
-            <p>$8.00</p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    © 2026 Bloom Beauty | Tienda Online de Maquillaje
-</footer>
-
-</body>
-</html>
-</footer>
-
-</body>
-</html>
+        .tarjeta {
+            background: #f8fafc;
+            padding: 30px;
+            width: 260px;
+            text-decoration: none
