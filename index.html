@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ilusa Makeup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0; font-family: Arial, Helvetica, sans-serif; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background-color: #1f2933; }
+        .logo img { height: 50px; }
+        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+        nav ul li a { text-decoration: none; color: #ffffff; font-size: 16px; }
+        nav ul li a:hover { color: #38bdf8; }
+        .hero { padding: 80px 40px; text-align: center; background-color: #f1f5f9; }
+        .hero h1 { font-size: 42px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; max-width: 600px; margin: 0 auto 30px; }
+        .btn-hero { padding: 12px 28px; background-color: #38bdf8; color: white; text-decoration: none; border-radius: 6px; }
+        .categorias { padding: 60px 40px; text-align: center; }
+        .contenedor-categorias { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+        .tarjeta { background: #f8fafc; padding: 30px; width: 260px; text-decoration: none; color: black; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-weight: bold; }
+        .galeria { padding: 60px 40px; background-color: #f8fafc; text-align: center; }
+        .grid-galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
+        .item-galeria img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; }
+        .item-galeria a { display: block; margin-top: 10px; text-decoration: none; font-weight: bold; color: #0ea5e9; }
+        .tienda { padding: 60px 40px; text-align: center; }
+        .grid-tienda { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
+        .producto { background: #f8fafc; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .producto img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+        .producto button { margin-top: 10px; padding: 10px 20px; background: #38bdf8; border: none; color: white; border-radius: 6px; cursor: pointer; }
+        .footer { background-color: #1f2933; color: #e5e7eb; padding: 50px 40px 20px; }
+        .footer-contenedor { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
+        .footer ul { list-style: none; padding: 0; }
+        .footer a { color: #cbd5f5; text-decoration: none; }
+        .redes-grid { display: grid; grid-template-columns: repeat(2, 50px); gap: 15px; }
+        .redes-grid a { background: #334155; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 22px; border-radius: 8px; }
+        .footer-copy { text-align: center; margin-top: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Ilusa Makeup">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quien-soy">Quién soy</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contenidos">Contenidos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="inicio" class="hero">
+    <h1>Ilusa Makeup</h1>
+    <p>Maquillaje que realza tu belleza, refleja tu estilo y resalta tu esencia.</p>
+    <a href="#contacto" class="btn-hero">Contáctanos</a>
+</section>
+
+<section class="categorias">
+    <h2>Categorías</h2>
+    <div class="contenedor-categorias">
+        <a href="#ojos" class="tarjeta">Ojos</a>
+        <a href="#labios" class="tarjeta">Labios</a>
+        <a href="#rostro" class="tarjeta">Rostro</a>
+    </div>
+</section>
+
+<section class="galeria">
+    <h2>Galería</h2>
+    <div class="grid-galeria">
+        <div class="item-galeria">
+            <img src="ojos.jpg" alt="Ojos">
+            <a href="#ojos">Ojos</a>
+        </div>
+        <div class="item-galeria">
+            <img src="labios.jpg" alt="Labios">
+            <a href="#labios">Labios</a>
+        </div>
+        <div class="item-galeria">
+            <img src="rostro.jpg" alt="Rostro">
+            <a href="#rostro">Rostro</a>
+        </div>
+    </div>
+</section>
+
+<section id="productos" class="tienda">
+    <h2>Nuestros Productos</h2>
+    <div class="grid-tienda">
+        <div class="producto">
+            <img src="producto1.jpg" alt="Paleta de sombras">
+            <h3>Paleta de Sombras</h3>
+            <p>$12.00</p>
+            <button>Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="producto2.jpg" alt="Labial">
+            <h3>Labial Matte</h3>
+            <p>$6.00</p>
+            <button>Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="producto3.jpg" alt="Base facial">
+            <h3>Base Líquida</h3>
+            <p>$10.00</p>
+            <button>Agregar al carrito</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-contenedor">
+        <div>
+            <h3>Ilusa Makeup</h3>
+            <p>Ilusa Makeup es una marca dedicada a realzar la belleza natural a través de productos de maquillaje modernos, accesibles y de calidad. Buscamos inspirar confianza, creatividad y expresión personal, ofreciendo una experiencia cercana e innovadora para cada cliente.</p>
+        </div>
+        <div>
+            <h4>Servicios</h4>
+            <ul>
+                <li>Asesoría de maquillaje</li>
+                <li>Venta de productos</li>
+                <li>Contenido educativo</li>
+                <li>Atención personalizada</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Categorías</h4>
+            <ul>
+                <li>Ojos</li>
+                <li>Labios</li>
+                <li>Rostro</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Redes Sociales</h4>
+            <div class="redes-grid">
+                <a href="#">📱</a>
+                <a href="#">📸</a>
+                <a href="#">🎵</a>
+                <a href="#">✨</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copy">
+        © 2026 Ilusa Makeup. Todos los derechos reservados.
+    </div>
+</footer>
+
+</body>
+</html>
