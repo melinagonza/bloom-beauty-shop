@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Labios | Bloom Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { margin:0; font-family:Arial, sans-serif; background:#fff0f6; text-align:center; }
+header { background:#ff4da6; padding:15px; }
+header h2 { color:white; }
+section { padding:60px 20px; }
+img { width:350px; border-radius:12px; }
+.btn { padding:12px 28px; background:#ff1493; color:white; text-decoration:none; border-radius:30px; font-weight:bold; }
+.btn:hover { background:#e60073; }
+</style>
+</head>
+<body>
+
+<header><h2>Labios - Bloom Beauty</h2></header>
+
+<section>
+    <h1>Productos para Labios</h1>
+    <p>Colores intensos, brillo y cuidado para tus labios 💄</p>
+    <img src="https://media.istockphoto.com/id/2185859859/photo/girl-with-lipstick-in-her-hands-close-up.jpg?s=1024x1024&w=is&k=20&c=FTY9d5ME68V_3DATPmyxpWtp-vlrx4uN_gpxUsCvy6s=" alt="Maquillaje Labios">
+    <br><br>
+    <a href="index.html" class="btn">Volver al Inicio</a>
+</section>
+
+</body>
+</html>
