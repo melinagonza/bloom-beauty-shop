@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Productos | Bloom Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { font-family: Arial, sans-serif; background:#fff0f6; margin:0; padding:0; }
+header { background:#ff4da6; color:white; text-align:center; padding:15px; }
+h1 { text-align:center; margin:20px 0; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; padding:20px; max-width:1000px; margin:auto; }
+.card { background:white; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+.card img { width:100%; border-radius:10px; }
+button { background:#ff4da6; color:white; border:none; padding:10px 15px; border-radius:20px; cursor:pointer; margin-top:10px; }
+button:hover { background:#e60073; }
+
+#carrito { background:white; padding:20px; margin:20px auto; max-width:600px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+#carrito h2 { text-align:center; color:#b30059; }
+#carrito ul { list-style:none; padding:0; }
+#carrito li { margin:10px 0; display:flex; justify-content:space-between; }
+.total { font-weight:bold; margin-top:15px; text-align:right; }
+.volver { display:block; text-align:center; margin:30px; font-weight:bold; color:#ff4da6; text-decoration:none; }
+.volver:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Productos - Bloom Beauty</h1>
+</header>
+
+<div class="grid">
+    <div class="card" data-nombre="Paleta de Sombras" data-precio="12">
+        <img src="producto1.jpg" alt="Paleta de Sombras">
+        <h3>Paleta de Sombras</h3>
+        <p>$12.00</p>
+        <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card" data-nombre="Labial Matte" data-precio="6">
+        <img src="producto2.jpg" alt="Labial Matte">
+        <h3>Labial Matte</h3>
+        <p>$6.00</p>
+        <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card" data-nombre="Base Líquida" data-precio="10">
+        <img src="producto3.jpg" alt="Base Líquida">
+        <h3>Base Líquida</h3>
+        <p>$10.00</p>
+        <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+</div>
+
+<div id="carrito">
+    <h2>🛒 Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p class="total">Costo de envío: $2.50</p>
+    <p class="total">Total: $<span id="total">0</span></p>
+</div>
+
+<a href="index.html" class="volver">⬅ Volver al inicio</a>
+
+<script>
+let carrito = [];
+const costoEnvio = 2.5;
+
+function agregarAlCarrito(button){
+    const card = button.parentElement;
+    const nombre = card.getAttribute('data-nombre');
+    const precio = parseFloat(card.getAttribute('data-precio'));
+    
+    carrito.push({nombre, precio});
+    actualizarCarrito();
+}
+
+function actualizarCarrito(){
+    const lista = document.getElementById('lista-carrito');
+    lista.innerHTML = '';
+    let totalProductos = 0;
+
+    carrito.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item.nombre} - $${item.precio.toFixed(2)}
+                        <button onclick="eliminar(${index})" style="background:red;color:white;border:none;border-radius:6px;padding:2px 6px; cursor:pointer;">X</button>`;
+        lista.appendChild(li);
+        totalProductos += item.precio;
+    });
+
+    const totalFinal = totalProductos + costoEnvio;
+    document.getElementById('total').textContent = totalFinal.toFixed(2);
+}
+
+function eliminar(index){
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+</script>
+
+</body>
+</html>
