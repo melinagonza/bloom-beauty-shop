@@ -5,37 +5,49 @@
 <title>Pagos | Bloom Beauty</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body { font-family:Arial, sans-serif; margin:0; background:#fff0f6; }
-header { background:#ff4da6; padding:15px; text-align:center; color:white; }
-h1,h2 { text-align:center; }
-section { max-width:800px; margin:auto; padding:30px; background:white; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); margin-top:30px; }
-p,li { font-size:16px; margin:8px 0; }
-.volver { display:block; text-align:center; margin:40px; color:#ff4da6; text-decoration:none; font-weight:bold; }
+body { font-family: Arial, sans-serif; background:#fff0f6; margin:0; padding:0; }
+header { background:#ff4da6; padding:20px; text-align:center; color:white; }
+h1 { text-align:center; margin:20px 0; }
+.container { max-width:1000px; margin:auto; padding:30px; }
+.tabla-pagos { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; text-align:center; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+.tabla-pagos div { background:#f8fafc; padding:15px; border-radius:10px; }
+.tabla-pagos h3 { margin-bottom:10px; color:#b30059; }
+.volver { display:block; text-align:center; margin:30px; font-weight:bold; color:#ff4da6; text-decoration:none; }
+.volver:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
 
 <header>
-    <h2>💳 Formas de Pago</h2>
+    <h1>💳 NUESTROS DETALLES BANCARIOS</h1>
 </header>
 
-<section>
-    <h3>🏫 Pago para estudiantes</h3>
-    <ul>
-        <li>Pago con QR en el colegio</li>
-        <li>Transferencia el mismo día de entrega</li>
-    </ul>
+<div class="container">
+    <div class="tabla-pagos">
+        <div>
+            <h3>Banco</h3>
+            <p>Pichincha</p>
+            <p>Guayaquil</p>
+            <p>Produbanco</p>
+        </div>
+        <div>
+            <h3>Número de cuenta</h3>
+            <p>1234567890</p>
+            <p>0987654321</p>
+            <p>1122334455</p>
+        </div>
+        <div>
+            <h3>Titular</h3>
+            <p>Bloom Beauty</p>
+            <p>Bloom Beauty</p>
+            <p>Bloom Beauty</p>
+        </div>
+    </div>
 
-    <h3>🌍 Pago para clientes externos</h3>
-    <ul>
-        <li>Banco Pichincha - Nombre: Bloom Beauty - Cuenta: 1234567890</li>
-        <li>Banco Guayaquil - Nombre: Bloom Beauty - Cuenta: 0987654321</li>
-        <li>Produbanco - Nombre: Bloom Beauty - Cuenta: 1122334455</li>
-    </ul>
-    <p>📩 Después del pago envía tu comprobante por WhatsApp</p>
-</section>
+    <p style="text-align:center; margin-top:20px;">📩 Después de realizar tu pago, envía el comprobante por WhatsApp para confirmar tu pedido.</p>
 
-<a href="index.html" class="volver">⬅ Volver al inicio</a>
+    <a href="index.html" class="volver">⬅ Volver al inicio</a>
+</div>
 
 </body>
 </html>
