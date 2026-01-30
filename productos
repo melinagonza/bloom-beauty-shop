@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Producto</title>
+<link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Bloom Beauty</h1>
+</header>
+
+<div class="producto">
+    <img id="imgProducto">
+    <h2 id="nombreProducto"></h2>
+    <p id="precioProducto"></p>
+
+    <h3>Datos del cliente</h3>
+    <input type="text" placeholder="Tu nombre">
+
+    <button onclick="pagar()">Ir a Formas de Pago</button>
+</div>
+
+<script>
+document.getElementById("imgProducto").src = localStorage.getItem("imagen");
+document.getElementById("nombreProducto").textContent = localStorage.getItem("nombre");
+document.getElementById("precioProducto").textContent = localStorage.getItem("precio");
+
+function pagar(){
+    window.location.href = "pago.html";
+}
+</script>
+
+</body>
+</html>
