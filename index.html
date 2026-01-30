@@ -5,7 +5,7 @@
 <title>Bloom Beauty</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body { margin:0; font-family: Arial, Helvetica, sans-serif; background: #fff0f6; }
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#fff0f6; }
 header { display:flex; justify-content:space-between; align-items:center; padding:15px 40px; background-color:#ff4da6; color:white; }
 .logo h1 { margin:0; font-size:28px; font-weight:bold; }
 nav ul { list-style:none; display:flex; gap:25px; margin:0; padding:0; }
@@ -15,19 +15,8 @@ nav ul li a:hover { color:#ffe4f2; }
 .hero { padding:80px 40px; text-align:center; }
 .hero h2 { font-size:42px; margin-bottom:20px; color:#b30059; }
 .hero p { font-size:18px; max-width:600px; margin:0 auto 30px; }
-.btn-hero { padding:12px 28px; background-color:#ff4da6; color:white; text-decoration:none; border-radius:6px; font-weight:bold; }
+.btn-hero { display:inline-block; padding:12px 28px; background-color:#ff4da6; color:white; text-decoration:none; border-radius:6px; font-weight:bold; margin:10px; }
 .btn-hero:hover { background-color:#e60073; }
-
-.categorias { padding:60px 40px; text-align:center; }
-.categorias h2 { margin-bottom:30px; }
-.contenedor-categorias { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; max-width:900px; margin:auto; }
-.tarjeta { background:#f8fafc; padding:20px; text-decoration:none; color:#b30059; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-weight:bold; transition:0.2s; text-align:center; cursor:pointer; }
-.tarjeta span { font-size:20px; }
-.tarjeta:hover { transform:scale(1.05); background:#ffe4f2; }
-
-.contacto { padding:60px 40px; text-align:center; background:#ff4da6; color:white; }
-.contacto h2 { margin-bottom:20px; font-size:32px; }
-.contacto p { font-size:18px; margin:5px 0; }
 
 footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 .footer-contenedor { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1200px; margin:auto; }
@@ -37,9 +26,9 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 .footer-copy { text-align:center; margin-top:20px; font-size:13px; }
 .redes-grid { display:flex; gap:15px; justify-content:center; }
 .redes-grid a { background:#ff4da6; width:50px; height:50px; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none; font-size:22px; border-radius:8px; }
+
 </style>
 </head>
-
 <body>
 
 <header>
@@ -47,9 +36,11 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
     <nav>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#categorias">Categorías</a></li>
-            <li><a href="pago.html">Pago</a></li>
-            <li><a href="#contacto">Contáctanos</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="bernardo.html">🎓 Bernardo</a></li>
+            <li><a href="pago.html">💳 Pagos</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 </header>
@@ -57,22 +48,15 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 <section id="inicio" class="hero">
     <h2>Resalta tu belleza natural ✨</h2>
     <p>Maquillaje y cuidado de piel para que luzcas siempre radiante y segura de ti misma.</p>
-    <a href="#contacto" class="btn-hero">Contáctanos</a>
-</section>
-
-<section id="categorias" class="categorias">
-    <h2>Categorías</h2>
-    <div class="contenedor-categorias">
-        <a href="ojos.html" class="tarjeta">👁 Ojos</a>
-        <a href="labios.html" class="tarjeta">💄 Labios</a>
-        <a href="rostro.html" class="tarjeta">✨ Rostro</a>
-        <a href="cuerpo.html" class="tarjeta">🌸 Cuerpo</a>
-    </div>
+    <a href="productos.html" class="btn-hero">💄 Ver Productos</a>
+    <a href="pago.html" class="btn-hero">💳 Formas de Pago</a>
+    <a href="bernardo.html" class="btn-hero">🏫 Pedidos Estudiantes Bernardo</a>
 </section>
 
 <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
     <p>WhatsApp: <a href="https://wa.me/0959881164" style="color:white;">0959881164</a></p>
+    <a href="https://wa.me/0959881164" class="btn-hero">💬 Hablar por WhatsApp</a>
 </section>
 
 <footer>
@@ -84,27 +68,22 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
         <div>
             <h4>Servicios 💼</h4>
             <ul>
-                <div>
-    <h4>Servicios 💼</h4>
-    <ul>
-        <li>🚚 Entrega a domicilio: Recibe tus productos cómodamente.</li>
-        <li🏫 Entrega en el colegio Bernardo Valdivieso: Para estudiantes, paga y recoge tus productos allí.</li>
-        <li>💄 Venta de cosméticos: Productos de calidad para resaltar tu belleza.</li>
-    </ul>
-</div>
-
+                <li>🚚 Entrega a domicilio: Recibe tus productos cómodamente.</li>
+                <li>🏫 Entrega en el colegio Bernardo Valdivieso: Para estudiantes, paga y recoge tus productos allí.</li>
+                <li>💄 Venta de cosméticos: Productos de calidad para resaltar tu belleza.</li>
+            </ul>
         </div>
         <div>
-            <h4>Categorías 📦</h4>
+            <h4>Categorías</h4>
             <ul>
                 <li>👁 Ojos</li>
-                <li>💄 Labios</li>
+                <li>💋 Labios</li>
                 <li>✨ Rostro</li>
                 <li>🌸 Cuerpo</li>
             </ul>
         </div>
         <div>
-            <h4>Redes Sociales 🌐</h4>
+            <h4>Redes Sociales</h4>
             <div class="redes-grid">
                 <a href="https://wa.me/0959881164">📱</a>
             </div>
