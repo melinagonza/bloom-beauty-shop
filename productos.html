@@ -61,8 +61,51 @@ button:hover { background:#e60073; }
 </div>
 
 <a href="index.html" class="volver">⬅ Volver al inicio</a>
+<script>
+function agregarAlCarrito(button){
+    const card = button.parentElement;
+    const nombre = card.getAttribute('data-nombre');
+    const precio = parseFloat(card.getAttribute('data-precio'));
 
+    // Traer carrito actual del localStorage o crear uno nuevo
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.push({nombre, precio});
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    alert(`${nombre} agregado al carrito ✅`);
+}
+
+// Mostrar carrito en carrito.html
+function mostrarCarrito(){
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const lista = document.getElementById('lista-carrito');
+    lista.innerHTML = '';
+    let totalProductos = 0;
+    const costoEnvio = 2.5;
+
+    carrito.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item.nombre} - $${item.precio.toFixed(2)}
+                        <button onclick="eliminar(${index})" style="background:red;color:white;border:none;border-radius:6px;padding:2px 6px; cursor:pointer;">X</button>`;
+        lista.appendChild(li);
+        totalProductos += item.precio;
+    });
+
+    const totalFinal = totalProductos + costoEnvio;
+    document.getElementById('total').textContent = totalFinal.toFixed(2);
+}
+
+function eliminar(index){
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.splice(index, 1);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    mostrarCarrito();
+}
+
+// Si es la página carrito.html, cargar carrito al abrir
+if(document.getElementById('lista-carrito')){
+    mostrarCarrito();
+}
+</script>
 </body>
-</html>
 
-</html>
