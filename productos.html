@@ -11,9 +11,14 @@ h1,h2 { text-align:center; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:30px; max-width:1000px; margin:auto; }
 .card { background:white; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
 .card img { width:100%; border-radius:10px; }
-button { background:#ff1493; color:white; border:none; padding:10px 15px; border-radius:20px; cursor:pointer; margin-top:10px; }
+button { background:#ff1493; color:white; border:none; padding:10px 15px; border-radius:20px; cursor:pointer; margin-top:10px; font-weight:bold; }
 button:hover { background:#e60073; }
 .volver { display:block; text-align:center; margin:40px; color:#ff4da6; text-decoration:none; font-weight:bold; }
+#carrito { background:white; padding:20px; margin:20px auto; max-width:600px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+#carrito h2 { text-align:center; color:#b30059; }
+#carrito ul { list-style:none; padding:0; }
+#carrito li { margin:10px 0; display:flex; justify-content:space-between; align-items:center; }
+.total { font-weight:bold; margin-top:15px; text-align:right; }
 </style>
 </head>
 <body>
@@ -26,42 +31,50 @@ button:hover { background:#e60073; }
 
 <div class="grid">
 
-    <!-- Ojos -->
-    <div class="card">
+    <div class="card" data-nombre="Paleta de Sombras" data-precio="12">
         <img src="ojos.jpg" alt="Paleta Sombras">
         <h3>Paleta Sombras</h3>
         <p>$12</p>
-        <button onclick="window.location.href='https://wa.me/0959881164?text=Hola,+quiero+la+Paleta+Sombras+de+$12'">Pedir por WhatsApp</button>
+        <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <!-- Labios -->
-    <div class="card">
+    <div class="card" data-nombre="Labial Mate" data-precio="5">
         <img src="labios.jpg" alt="Labial Mate">
         <h3>Labial Mate</h3>
         <p>$5</p>
-        <button onclick="window.location.href='https://wa.me/0959881164?text=Hola,+quiero+el+Labial+Mate+de+$5'">Pedir por WhatsApp</button>
+        <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <!-- Rostro -->
-    <div class="card">
+    <div class="card" data-nombre="Base Líquida" data-precio="10">
         <img src="rostro.jpg" alt="Base Líquida">
         <h3>Base Líquida</h3>
         <p>$10</p>
-        <button onclick="window.location.href='https://wa.me/0959881164?text=Hola,+quiero+la+Base+Líquida+de+$10'">Pedir por WhatsApp</button>
+        <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <!-- Cuerpo -->
-    <div class="card">
+    <div class="card" data-nombre="Crema Corporal" data-precio="8">
         <img src="cuerpo.jpg" alt="Crema Corporal">
         <h3>Crema Corporal</h3>
         <p>$8</p>
-        <button onclick="window.location.href='https://wa.me/0959881164?text=Hola,+quiero+la+Crema+Corporal+de+$8'">Pedir por WhatsApp</button>
+        <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
 </div>
 
+<!-- Carrito -->
+<div id="carrito">
+    <h2>🛒 Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p class="total">Costo de envío: $2.50</p>
+    <p class="total">Total: $<span id="total">0</span></p>
+</div>
+
 <a href="index.html" class="volver">⬅ Volver al inicio</a>
+
 <script>
+const costoEnvio = 2.5;
+
+// Función para agregar productos al carrito
 function agregarAlCarrito(button){
     const card = button.parentElement;
     const nombre = card.getAttribute('data-nombre');
@@ -73,15 +86,15 @@ function agregarAlCarrito(button){
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
     alert(`${nombre} agregado al carrito ✅`);
+    mostrarCarrito();
 }
 
-// Mostrar carrito en carrito.html
+// Mostrar carrito
 function mostrarCarrito(){
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const lista = document.getElementById('lista-carrito');
     lista.innerHTML = '';
     let totalProductos = 0;
-    const costoEnvio = 2.5;
 
     carrito.forEach((item, index) => {
         const li = document.createElement('li');
@@ -95,6 +108,7 @@ function mostrarCarrito(){
     document.getElementById('total').textContent = totalFinal.toFixed(2);
 }
 
+// Eliminar del carrito
 function eliminar(index){
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito.splice(index, 1);
@@ -102,10 +116,10 @@ function eliminar(index){
     mostrarCarrito();
 }
 
-// Si es la página carrito.html, cargar carrito al abrir
-if(document.getElementById('lista-carrito')){
+// Cargar carrito al abrir la página
+window.onload = function(){
     mostrarCarrito();
 }
 </script>
 </body>
-
+</html>
