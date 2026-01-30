@@ -7,13 +7,19 @@
 
 <style>
 body{margin:0;font-family:Arial;background:#fff0f6;}
-
 header{
   background:#ff4da6;
   padding:15px 30px;
   text-align:center;
   color:white;
 }
+header nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:bold;
+}
+header nav a:hover{ text-decoration:underline; }
 
 .portada img{
   width:100%;
@@ -25,14 +31,22 @@ header{
   text-align:center;
   padding:40px 20px;
 }
-
 .hero h2{color:#b30059;font-size:34px;}
+.hero button{
+  padding:10px 20px;
+  background:#ff4da6;
+  border:none;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:10px;
+}
+.hero button:hover{background:#e60073;}
 
 .categorias{
   padding:50px 20px;
   text-align:center;
 }
-
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -40,7 +54,6 @@ header{
   max-width:900px;
   margin:auto;
 }
-
 .card{
   background:white;
   padding:30px;
@@ -51,7 +64,6 @@ header{
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
   transition:0.2s;
 }
-
 .card:hover{transform:scale(1.05);background:#ffe4f2;}
 
 .contacto{
@@ -61,6 +73,52 @@ header{
   padding:40px 20px;
   margin-top:40px;
 }
+footer{
+  background:#b30059;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+footer a{color:white; text-decoration:none; margin:0 10px;}
+footer a:hover{text-decoration:underline;}
+
+/* Ventana modal */
+.modal{
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.modal-content{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  max-width:400px;
+  width:90%;
+  text-align:center;
+}
+.modal-content input{
+  width:90%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+.modal-content button{
+  padding:10px 20px;
+  background:#ff4da6;
+  border:none;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:10px;
+}
+.modal-content button:hover{background:#e60073;}
 </style>
 </head>
 
@@ -68,32 +126,25 @@ header{
 
 <header>
   <h1>Bloom Beauty</h1>
+  <nav>
+    <a href="#categorias">Categorías</a>
+    <a href="#contacto">Contáctanos</a>
+    <a href="#" onclick="abrirModal()">Registro</a>
+  </nav>
 </header>
 
 <div class="portada">
-  <img src="img/inicio.jpeg">
+  <img src="img/inicio.jpeg" alt="Portada Bloom Beauty">
 </div>
 
 <section class="hero">
   <h2>Resalta tu belleza natural ✨</h2>
   <p>Maquillaje y cuidado de piel</p>
+  <button onclick="abrirModal()">Regístrate para comprar</button>
 </section>
 
-<section class="categorias">
+<section id="categorias" class="categorias">
   <h2>Categorías</h2>
   <div class="grid">
     <a class="card" href="ojos.html">👁 Ojos</a>
     <a class="card" href="rostro.html">✨ Rostro</a>
-    <a class="card" href="labios.html">💄 Labios</a>
-    <a class="card" href="cuerpo.html">🌸 Cuerpo</a>
-  </div>
-</section>
-
-<section class="contacto">
-  <h2>Contáctanos</h2>
-  <p>WhatsApp: 0999999999</p>
-  <p>Email: bloombeauty@gmail.com</p>
-</section>
-
-</body>
-</html>
