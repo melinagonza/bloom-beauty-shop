@@ -4,16 +4,57 @@
 <meta charset="UTF-8">
 <title>Bloom Beauty</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{margin:0;font-family:Arial;background:#fff0f6;}
-header{background:#ff4da6;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;}
+
+header{
+  background:#ff4da6;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
 header h1{color:white;margin:0;}
-.hero{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#ffc1e3,#ffd6ec);}
+
+.hero{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#ffc1e3,#ffd6ec);
+}
+
 .hero h2{font-size:36px;color:#b30059;}
-.categorias{padding:50px 20px;text-align:center;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px;max-width:900px;margin:auto;}
-.card{background:white;padding:30px;border-radius:15px;text-decoration:none;color:#b30059;font-weight:bold;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:0.2s;}
-.card:hover{transform:scale(1.05);background:#ffe4f2;}
+
+.categorias{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  max-width:900px;
+  margin:auto;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  text-decoration:none;
+  color:#b30059;
+  font-weight:bold;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.2s;
+  font-size:20px;
+}
+
+.card:hover{
+  transform:scale(1.05);
+  background:#ffe4f2;
+}
 </style>
 </head>
 
@@ -30,12 +71,15 @@ header h1{color:white;margin:0;}
 
 <section class="categorias">
   <h2>Categorías</h2>
+
   <div class="grid">
+    <!-- BOTONES DE CATEGORÍAS -->
     <a class="card" href="ojos.html">👁 Ojos</a>
     <a class="card" href="rostro.html">✨ Rostro</a>
     <a class="card" href="labios.html">💄 Labios</a>
     <a class="card" href="cuerpo.html">🌸 Cuerpo</a>
   </div>
+
 </section>
 
 </body>
