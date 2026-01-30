@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Bloom Beauty</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
 body { margin:0; font-family: Arial, Helvetica, sans-serif; background: #fff0f6; }
 header { display:flex; justify-content:space-between; align-items:center; padding:15px 40px; background-color:#ff4da6; color:white; }
@@ -23,31 +22,12 @@ nav ul li a:hover { color:#ffe4f2; }
 .categorias h2 { margin-bottom:30px; }
 .contenedor-categorias { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; max-width:900px; margin:auto; }
 .tarjeta { background:#f8fafc; padding:20px; text-decoration:none; color:#b30059; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-weight:bold; transition:0.2s; text-align:center; cursor:pointer; }
-.tarjeta img { width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:10px; }
-.tarjeta span { display:block; margin-bottom:5px; font-size:18px; }
-.tarjeta p { margin:0; font-weight:bold; }
+.tarjeta span { font-size:20px; }
 .tarjeta:hover { transform:scale(1.05); background:#ffe4f2; }
-
-.btn-inicio { display:inline-block; margin-top:30px; padding:12px 28px; background:#ff4da6; color:white; border-radius:6px; text-decoration:none; font-weight:bold; }
-.btn-inicio:hover { background:#e60073; }
 
 .contacto { padding:60px 40px; text-align:center; background:#ff4da6; color:white; }
 .contacto h2 { margin-bottom:20px; font-size:32px; }
 .contacto p { font-size:18px; margin:5px 0; }
-
-.tienda { padding:60px 40px; text-align:center; }
-.tienda h2 { margin-bottom:30px; }
-.grid-tienda { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1000px; margin:auto; }
-.producto { background:#f8fafc; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; }
-.producto img { width:100%; height:200px; object-fit:cover; border-radius:8px; }
-.producto button { margin-top:10px; padding:10px 20px; background:#ff4da6; border:none; color:white; border-radius:6px; cursor:pointer; font-weight:bold; }
-.producto button:hover { background:#e60073; }
-
-.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000; }
-.modal-content { background:white; padding:30px; border-radius:15px; max-width:400px; width:90%; text-align:center; }
-.modal-content input { width:90%; padding:10px; margin:10px 0; border-radius:10px; border:1px solid #ccc; }
-.modal-content button { padding:10px 20px; background:#ff4da6; border:none; color:white; border-radius:10px; cursor:pointer; font-weight:bold; }
-.modal-content button:hover { background:#e60073; }
 
 footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 .footer-contenedor { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1200px; margin:auto; }
@@ -57,6 +37,7 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 .footer-copy { text-align:center; margin-top:20px; font-size:13px; }
 .redes-grid { display:flex; gap:15px; justify-content:center; }
 .redes-grid a { background:#ff4da6; width:50px; height:50px; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none; font-size:22px; border-radius:8px; }
+
 </style>
 </head>
 
@@ -68,9 +49,8 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#categorias">Categorías</a></li>
-            <li><a href="#tienda">Productos</a></li>
+            <li><a href="pago.html">Pago</a></li>
             <li><a href="#contacto">Contáctanos</a></li>
-            <li><a href="#pago">Pago</a></li>
         </ul>
     </nav>
 </header>
@@ -84,68 +64,10 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 <section id="categorias" class="categorias">
     <h2>Categorías</h2>
     <div class="contenedor-categorias">
-        <a href="#ojos" class="tarjeta">
-            <img src="ojos.jpg" alt="Ojos">
-            <span>👁 Ojos</span>
-            <p>Desde $8</p>
-        </a>
-        <a href="#labios" class="tarjeta">
-            <img src="labios.jpg" alt="Labios">
-            <span>💄 Labios</span>
-            <p>Desde $6</p>
-        </a>
-        <a href="#rostro" class="tarjeta">
-            <img src="rostro.jpg" alt="Rostro">
-            <span>✨ Rostro</span>
-            <p>Desde $12</p>
-        </a>
-        <a href="#cuerpo" class="tarjeta">
-            <img src="cuerpo.jpg" alt="Cuerpo">
-            <span>🌸 Cuerpo</span>
-            <p>Desde $10</p>
-        </a>
-    </div>
-    <a href="#inicio" class="btn-inicio">Volver al inicio</a>
-</section>
-
-<section id="tienda" class="tienda">
-    <h2>Nuestros Productos</h2>
-    <div class="grid-tienda">
-        <div class="producto">
-            <img src="producto1.jpg" alt="Paleta de sombras">
-            <h3>Paleta de Sombras</h3>
-            <p>$12.00</p>
-            <button>Agregar al carrito</button>
-        </div>
-        <div class="producto">
-            <img src="producto2.jpg" alt="Labial Matte">
-            <h3>Labial Matte</h3>
-            <p>$6.00</p>
-            <button>Agregar al carrito</button>
-        </div>
-        <div class="producto">
-            <img src="producto3.jpg" alt="Base líquida">
-            <h3>Base Líquida</h3>
-            <p>$10.00</p>
-            <button>Agregar al carrito</button>
-        </div>
-    </div>
-</section>
-
-<section id="pago" class="tienda">
-    <h2>Pagos y Registro</h2>
-    <p>Puedes realizar tu pago a cualquiera de estas cuentas bancarias:</p>
-    <ul>
-        <li>Banco Inventado 1: 123-456-7890</li>
-        <li>Banco Inventado 2: 987-654-3210</li>
-        <li>Banco Inventado 3: 456-789-1230</li>
-    </ul>
-    <h3>Registro</h3>
-    <div class="modal-content">
-        <input type="text" placeholder="Nombre completo">
-        <input type="text" placeholder="Número de teléfono">
-        <input type="text" placeholder="Dirección">
-        <button>Enviar</button>
+        <a href="ojos.html" class="tarjeta">👁 Ojos</a>
+        <a href="labios.html" class="tarjeta">💄 Labios</a>
+        <a href="rostro.html" class="tarjeta">✨ Rostro</a>
+        <a href="cuerpo.html" class="tarjeta">🌸 Cuerpo</a>
     </div>
 </section>
 
@@ -163,17 +85,17 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
         <div>
             <h4>Servicios</h4>
             <ul>
-                <li>Entrega a domicilio</li>
-                <li>Venta de cosméticos</li>
+                <li>🚚 Entrega a domicilio</li>
+                <li>💄 Venta de cosméticos</li>
             </ul>
         </div>
         <div>
             <h4>Categorías</h4>
             <ul>
-                <li>Ojos</li>
-                <li>Labios</li>
-                <li>Rostro</li>
-                <li>Cuerpo</li>
+                <li>👁 Ojos</li>
+                <li>💄 Labios</li>
+                <li>✨ Rostro</li>
+                <li>🌸 Cuerpo</li>
             </ul>
         </div>
         <div>
@@ -189,6 +111,4 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 </footer>
 
 </body>
-</html>
-
 </html>
