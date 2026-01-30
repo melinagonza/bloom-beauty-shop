@@ -2,27 +2,67 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Productos</title>
+<title>Productos | Bloom Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body{margin:0;font-family:Arial;background:#fff0f6;text-align:center;}
-header{background:#ff4da6;color:white;padding:15px;}
-.categoria{margin:40px;}
-a{display:block;margin:10px;font-size:20px;text-decoration:none;color:#b30059;font-weight:bold;}
-.volver{margin:40px;display:block;}
+body { margin:0; font-family:Arial, sans-serif; background:#fff0f6; }
+header { background:#ff4da6; padding:15px; text-align:center; color:white; }
+h1,h2 { text-align:center; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:30px; max-width:1000px; margin:auto; }
+.card { background:white; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+.card img { width:100%; border-radius:10px; }
+button { background:#ff1493; color:white; border:none; padding:10px 15px; border-radius:20px; cursor:pointer; margin-top:10px; }
+button:hover { background:#e60073; }
+.volver { display:block; text-align:center; margin:40px; color:#ff4da6; text-decoration:none; font-weight:bold; }
 </style>
 </head>
 <body>
 
-<header><h2>Categorías</h2></header>
+<header>
+    <h2>Productos - Bloom Beauty</h2>
+</header>
 
-<div class="categoria">
-<a href="ojos.html">👁 Ojos</a>
-<a href="labios.html">💋 Labios</a>
-<a href="rostro.html">✨ Rostro</a>
-<a href="cuerpo.html">🌸 Cuerpo</a>
+<h1>Productos disponibles 💄</h1>
+
+<div class="grid">
+
+    <!-- Ojos -->
+    <div class="card">
+        <img src="ojos.jpg" alt="Paleta Sombras">
+        <h3>Paleta Sombras</h3>
+        <p>$12</p>
+        <button onclick="window.location.href='https://wa.me/0959881164?text=Hola,+quiero+la+Paleta+Sombras+de+$12'">Pedir por WhatsApp</button>
+    </div>
+
+    <!-- Labios -->
+    <div class="card">
+        <img src="labios.jpg" alt="Labial Mate">
+        <h3>Labial Mate</h3>
+        <p>$5</p>
+        <button onclick="window.location.href='https://wa.me/0959881164?text=Hola,+quiero+el+Labial+Mate+de+$5'">Pedir por WhatsApp</button>
+    </div>
+
+    <!-- Rostro -->
+    <div class="card">
+        <img src="rostro.jpg" alt="Base Líquida">
+        <h3>Base Líquida</h3>
+        <p>$10</p>
+        <button onclick="window.location.href='https://wa.me/0959881164?text=Hola,+quiero+la+Base+Líquida+de+$10'">Pedir por WhatsApp</button>
+    </div>
+
+    <!-- Cuerpo -->
+    <div class="card">
+        <img src="cuerpo.jpg" alt="Crema Corporal">
+        <h3>Crema Corporal</h3>
+        <p>$8</p>
+        <button onclick="window.location.href='https://wa.me/0959881164?text=Hola,+quiero+la+Crema+Corporal+de+$8'">Pedir por WhatsApp</button>
+    </div>
+
 </div>
 
 <a href="index.html" class="volver">⬅ Volver al inicio</a>
 
 </body>
+</html>
+
 </html>
