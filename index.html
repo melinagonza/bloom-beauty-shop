@@ -2,49 +2,52 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Bloom Beauty | Makeup Shop</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom Beauty</title>
+<link rel="stylesheet" href="css.css">
+</head>
 
-<style>
-body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#fff0f6; }
+<body>
 
-header {
- display:flex; justify-content:space-between; align-items:center;
- padding:15px 40px; background:#ff4da6;
-}
+<header>
+    <h1>Bloom Beauty</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="categorias.html">Categorías</a>
+    </nav>
+</header>
 
-nav ul { list-style:none; display:flex; gap:25px; padding:0; margin:0; }
-nav a { text-decoration:none; color:white; font-weight:bold; }
+<section class="hero">
+    <h2>Resalta tu belleza natural ✨</h2>
+    <p>Maquillaje y cuidado de piel</p>
+</section>
 
-.hero {
- text-align:center;
- padding:70px 20px;
- background:linear-gradient(135deg,#ffc1e3,#ffd6ec);
-}
+<section class="categorias-inicio">
+    <h2>Categorías</h2>
 
-.hero img {
- width:260px; border-radius:15px; margin:20px auto; display:block;
-}
+    <div class="grid">
 
-.btn {
- background:#ff1493; color:white; padding:12px 25px;
- text-decoration:none; border-radius:25px; display:inline-block;
-}
+        <div class="card">
+            <img src="img/ojos.jpg" alt="Ojos">
+            <h3>Ojos</h3>
+        </div>
 
-.categorias { padding:60px 20px; text-align:center; }
+        <div class="card">
+            <img src="img/rostro.jpg" alt="Rostro">
+            <h3>Rostro</h3>
+        </div>
 
-.grid-categorias {
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
- gap:25px;
- max-width:900px;
- margin:auto;
-}
+        <div class="card">
+            <img src="img/labios.jpg" alt="Labios">
+            <h3>Labios</h3>
+        </div>
 
-.cat-card {
- background:white; border-radius:15px; padding:15px;
- text-decoration:none; color:#b30059;
- box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
+        <div class="card">
+            <img src="img/cuerpo.jpg" alt="Cuerpo">
+            <h3>Cuidado Corporal</h3>
+        </div>
 
-.ca
+    </div>
+</section>
+
+</body>
+</html>
