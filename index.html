@@ -3,51 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <title>Bloom Beauty</title>
-<link rel="stylesheet" href="css.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#fff0f6;
+}
+
+header{
+  background:#ff4da6;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header h1{
+  color:white;
+  margin:0;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:bold;
+}
+
+.hero{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#ffc1e3,#ffd6ec);
+}
+
+.hero h2{
+  font-size:36px;
+  color:#b30059;
+}
+
+.categorias{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  max-width:900px;
+  margin:auto;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  text-decoration:none;
+  color:#b30059;
+  font-weight:bold;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:scale(1.05);
+  background:#ffe4f2;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Bloom Beauty</h1>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="categorias.html">Categorías</a>
-    </nav>
+  <h1>Bloom Beauty</h1>
+  <nav>
+    <a href="index.html">Inicio</a>
+  </nav>
 </header>
 
 <section class="hero">
-    <h2>Resalta tu belleza natural ✨</h2>
-    <p>Maquillaje y cuidado de piel</p>
+  <h2>Resalta tu belleza natural ✨</h2>
+  <p>Maquillaje y cuidado de piel</p>
 </section>
 
-<section class="categorias-inicio">
-    <h2>Categorías</h2>
+<section class="categorias">
+  <h2>Categorías</h2>
 
-    <div class="grid">
-
-        <div class="card">
-            <img src="img/ojos.jpg" alt="Ojos">
-            <h3>Ojos</h3>
-        </div>
-
-        <div class="card">
-            <img src="img/rostro.jpg" alt="Rostro">
-            <h3>Rostro</h3>
-        </div>
-
-        <div class="card">
-            <img src="img/labios.jpg" alt="Labios">
-            <h3>Labios</h3>
-        </div>
-
-        <div class="card">
-            <img src="img/cuerpo.jpg" alt="Cuerpo">
-            <h3>Cuidado Corporal</h3>
-        </div>
-
-    </div>
-</section>
-
-</body>
-</html>
+  <div class="grid">
+    <a class="card" href="ojos.html">👁 Ojos</a>
+    <a class="card" href="rostro.html">✨ Rostro</a>
+    <a class="card" href="labios.html">💄 Labios</a>
+    <a class="card" href
