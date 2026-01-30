@@ -68,6 +68,34 @@ button:hover { background:#e60073; }
 </div>
 
 <a href="index.html" class="volver">⬅ Volver al inicio</a>
+<!-- tus productos aquí -->
+<div class="grid">
+    <div class="card" data-nombre="Paleta de Sombras" data-precio="12">
+        <img src="producto1.jpg" alt="Paleta de Sombras">
+        <h3>Paleta de Sombras</h3>
+        <p>$12.00</p>
+        <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+</div>
+
+<!-- Script para guardar en localStorage -->
+<script>
+function agregarAlCarrito(button){
+    const card = button.parentElement;
+    const nombre = card.getAttribute('data-nombre');
+    const precio = parseFloat(card.getAttribute('data-precio'));
+
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.push({nombre, precio});
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    alert(`${nombre} agregado al carrito ✅`);
+}
+</script>
 
 </body>
 </html>
+
+</body>
+</html>
+
