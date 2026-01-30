@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Categorías - Bloom Beauty</title>
+<link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Bloom Beauty</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="categorias.html">Categorías</a>
+    </nav>
+</header>
+
+<h2 style="text-align:center;">Nuestras Categorías</h2>
+
+<div class="grid">
+
+    <div class="card">
+        <img src="img/ojos.jpg">
+        <h3>Sombras y Máscaras</h3>
+        <button onclick="verProducto('Paleta de Sombras', 'img/ojos.jpg', '$5')">Ver</button>
+    </div>
+
+    <div class="card">
+        <img src="img/labios.jpg">
+        <h3>Labiales</h3>
+        <button onclick="verProducto('Labial Mate', 'img/labios.jpg', '$3')">Ver</button>
+    </div>
+
+    <div class="card">
+        <img src="img/rostro.jpg">
+        <h3>Base y Corrector</h3>
+        <button onclick="verProducto('Base Líquida', 'img/rostro.jpg', '$6')">Ver</button>
+    </div>
+
+</div>
+
+<script>
+function verProducto(nombre, imagen, precio) {
+    localStorage.setItem("nombre", nombre);
+    localStorage.setItem("imagen", imagen);
+    localStorage.setItem("precio", precio);
+    window.location.href = "producto.html";
+}
+</script>
+
+</body>
+</html>
