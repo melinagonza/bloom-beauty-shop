@@ -4,27 +4,53 @@
 <meta charset="UTF-8">
 <title>Cuerpo | Bloom Beauty</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body { margin:0; font-family:Arial, sans-serif; background:#fff0f6; text-align:center; }
-header { background:#ff4da6; padding:15px; }
-header h2 { color:white; }
-section { padding:60px 20px; }
-img { width:350px; border-radius:12px; }
-.btn { padding:12px 28px; background:#ff1493; color:white; text-decoration:none; border-radius:30px; font-weight:bold; }
-.btn:hover { background:#e60073; }
+body { margin:0; font-family:Arial, sans-serif; background:#fff0f6; }
+
+header { background:#ff4da6; padding:15px; text-align:center; color:white; }
+
+h1 { text-align:center; margin-top:40px; }
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.card {
+    background:white;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width:100%;
+    border-radius:10px;
+}
+
+button {
+    background:#ff1493;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:20px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover { background:#e60073; }
+
+.volver {
+    display:block;
+    text-align:center;
+    margin:40px;
+}
 </style>
 </head>
 <body>
 
-<header><h2>Cuerpo - Bloom Beauty</h2></header>
-
-<section>
-    <h1>Productos para Cuerpo</h1>
-    <p>Hidratación y cuidado corporal para tu bienestar 🌸</p>
-    <img src="https://media.istockphoto.com/id/2210181395/photo/young-woman-in-white-underwear-massaging-body-lotion-into-legs-while-sitting-on-silky-sheets.jpg?s=612x612&w=is&k=20&c=kYEuTlQwigLYv-_0GCG0e9JOQN-YfgGDH7wmjoprbHo=" alt="Maquillaje Cuerpo">
-    <br><br>
-    <a href="index.html" class="btn">Volver al Inicio</a>
-</section>
-
-</body>
-</html>
+<header>
