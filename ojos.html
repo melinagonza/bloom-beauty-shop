@@ -2,49 +2,72 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Ojos - Bloom Beauty</title>
+<title>Ojos | Bloom Beauty</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body { margin:0; font-family: Arial, Helvetica, sans-serif; background: #fff0f6; }
-header { display:flex; justify-content:flex-start; align-items:center; padding:15px 40px; background-color:#ff4da6; color:white; }
-header a { text-decoration:none; color:white; font-weight:bold; font-size:16px; }
-.tienda { padding:60px 40px; text-align:center; }
-.tienda h2 { margin-bottom:30px; }
-.grid-tienda { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1000px; margin:auto; }
-.producto { background:#f8fafc; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; }
-.producto img { width:100%; height:200px; object-fit:cover; border-radius:8px; }
-.producto p { font-weight:bold; }
-.producto button { margin-top:10px; padding:10px 20px; background:#ff4da6; border:none; color:white; border-radius:6px; cursor:pointer; font-weight:bold; }
-.producto button:hover { background:#e60073; }
 
-.btn-inicio { display:inline-block; margin-top:30px; padding:12px 28px; background:#ff4da6; color:white; border-radius:6px; text-decoration:none; font-weight:bold; cursor:pointer; }
-.btn-inicio:hover { background:#e60073; }
+<style>
+body { margin:0; font-family:Arial, sans-serif; background:#fff0f6; }
+header { background:#ff4da6; padding:15px; text-align:center; color:white; }
+h1 { margin-top:40px; text-align:center; }
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.card {
+    background:white;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img { width:100%; border-radius:10px; }
+
+button {
+    background:#ff1493;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:20px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover { background:#e60073; }
+.volver { display:block; text-align:center; margin:40px; }
 </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html">⬅ Volver al inicio</a>
+    <h2>Ojos - Bloom Beauty</h2>
 </header>
 
-<section class="tienda">
-    <h2>👁 Ojos</h2>
-    <div class="grid-tienda">
-        <div class="producto">
-            <img src="producto_ojos1.jpg" alt="Paleta de sombras ojos">
-            <h3>Paleta de Sombras Ojos</h3>
-            <p>$12.00</p>
-            <button>Agregar al carrito</button>
-        </div>
-        <div class="producto">
-            <img src="producto_ojos2.jpg" alt="Delineador líquido">
-            <h3>Delineador Líquido</h3>
-            <p>$8.00</p>
-            <button>Agregar al carrito</button>
-        </div>
+<h1>Productos para Ojos 👁</h1>
+
+<div class="grid">
+
+    <div class="card">
+        <img src="https://media.istockphoto.com/id/1274265433/photo/colorful-eye-shadow.jpg?s=1024x1024&w=is&k=20&c=VjZzV0c3Pq6sVjv8Ux36Nf5W3kafX6i2ZcXhDh5Kk9Y=">
+        <h3>Paleta de Sombras</h3>
+        <p>$12</p>
+        <button>Ver Producto</button>
     </div>
-    <a href="index.html" class="btn-inicio">⬅ Volver al inicio</a>
-</section>
+
+    <div class="card">
+        <img src="https://media.istockphoto.com/id/1053929726/photo/eyeliner-makeup.jpg?s=1024x1024&w=is&k=20&c=GTvl0HhfSxj-EtPl2j0On8T6iB3qZ2YUZbHnR82j3bU=">
+        <h3>Delineador Líquido</h3>
+        <p>$8</p>
+        <button>Ver Producto</button>
+    </div>
+
+</div>
+
+<a href="index.html" class="volver">⬅ Volver al inicio</a>
 
 </body>
 </html>
