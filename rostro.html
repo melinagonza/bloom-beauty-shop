@@ -2,49 +2,72 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Rostro - Bloom Beauty</title>
+<title>Rostro | Bloom Beauty</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body { margin:0; font-family: Arial, Helvetica, sans-serif; background: #fff0f6; }
-header { display:flex; justify-content:flex-start; align-items:center; padding:15px 40px; background-color:#ff4da6; color:white; }
-header a { text-decoration:none; color:white; font-weight:bold; font-size:16px; }
-.tienda { padding:60px 40px; text-align:center; }
-.tienda h2 { margin-bottom:30px; }
-.grid-tienda { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1000px; margin:auto; }
-.producto { background:#f8fafc; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; }
-.producto img { width:100%; height:200px; object-fit:cover; border-radius:8px; }
-.producto p { font-weight:bold; }
-.producto button { margin-top:10px; padding:10px 20px; background:#ff4da6; border:none; color:white; border-radius:6px; cursor:pointer; font-weight:bold; }
-.producto button:hover { background:#e60073; }
 
-.btn-inicio { display:inline-block; margin-top:30px; padding:12px 28px; background:#ff4da6; color:white; border-radius:6px; text-decoration:none; font-weight:bold; cursor:pointer; }
-.btn-inicio:hover { background:#e60073; }
+<style>
+body { margin:0; font-family:Arial, sans-serif; background:#fff0f6; }
+header { background:#ff4da6; padding:15px; text-align:center; color:white; }
+h1 { margin-top:40px; text-align:center; }
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.card {
+    background:white;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img { width:100%; border-radius:10px; }
+
+button {
+    background:#ff1493;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:20px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover { background:#e60073; }
+.volver { display:block; text-align:center; margin:40px; }
 </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html">⬅ Volver al inicio</a>
+    <h2>Rostro - Bloom Beauty</h2>
 </header>
 
-<section class="tienda">
-    <h2>✨ Rostro</h2>
-    <div class="grid-tienda">
-        <div class="producto">
-            <img src="producto_rostro1.jpg" alt="Base líquida">
-            <h3>Base Líquida</h3>
-            <p>$10.00</p>
-            <button>Agregar al carrito</button>
-        </div>
-        <div class="producto">
-            <img src="producto_rostro2.jpg" alt="Polvo compacto">
-            <h3>Polvo Compacto</h3>
-            <p>$9.00</p>
-            <button>Agregar al carrito</button>
-        </div>
+<h1>Productos para Rostro ✨</h1>
+
+<div class="grid">
+
+    <div class="card">
+        <img src="https://media.istockphoto.com/id/1143469180/photo/foundation-makeup.jpg?s=1024x1024&w=is&k=20&c=UBs4cFx-FR8Hq0D8Uqv2sZWfZxM1KklKp2YF-1XXz_Q=">
+        <h3>Base Líquida</h3>
+        <p>$10</p>
+        <button>Ver Producto</button>
     </div>
-    <a href="index.html" class="btn-inicio">⬅ Volver al inicio</a>
-</section>
+
+    <div class="card">
+        <img src="https://media.istockphoto.com/id/1359514412/photo/blush-palette.jpg?s=1024x1024&w=is&k=20&c=5o3oWnv3wA1gW5fqxXmMQpLU7CXwnvPj-8GkOZtT0z0=">
+        <h3>Rubor Compacto</h3>
+        <p>$7</p>
+        <button>Ver Producto</button>
+    </div>
+
+</div>
+
+<a href="index.html" class="volver">⬅ Volver al inicio</a>
 
 </body>
 </html>
