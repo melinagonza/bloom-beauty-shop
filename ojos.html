@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Ojos - Bloom Beauty</title>
-  <link rel="stylesheet" href="css/estilos.css">
+<meta charset="UTF-8">
+<title>Ojos - Bloom Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{margin:0;font-family:Arial;background:#fff0f6;}
+header{background:#ff4da6;color:white;text-align:center;padding:15px;font-size:22px;font-weight:bold;}
+h1{text-align:center;margin:40px 0 20px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;padding:20px;max-width:1000px;margin:auto;}
+.card{background:white;border-radius:15px;padding:20px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+.card img{width:100%;border-radius:12px;}
+button{background:#ff1493;color:white;border:none;padding:10px 20px;border-radius:25px;cursor:pointer;margin-top:10px;}
+button:hover{background:#e60073;}
+</style>
 </head>
+
 <body>
+<header>Ojos - Bloom Beauty</header>
 
-<h1>Productos para Ojos</h1>
+<h1>Productos para Ojos 👁</h1>
 
-<div class="producto">
-  <img src="imagenes/rimel.jpg" width="200">
-  <h3>Rímel Volumen</h3>
-  <p>$5.00</p>
+<div class="grid">
+
+<div class="card">
+<img src="https://media.istockphoto.com/id/947033060/photo/beauty-woman-makeup-beautiful-woman-applying-black-mascara.jpg?s=612x612&w=is&k=20&c=4NMRoSWe1uOKg3IZa8z2UaL00EgEm_ZCYRk7--i6LcI=">
+<h2>Rímel Volumen</h2>
+<p>$5</p>
+<button>Ver Producto</button>
 </div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30">
+<h2>Delineador Negro</h2>
+<p>$4</p>
+<button>Ver Producto</button>
+</div>
+
+</div>
 </body>
 </html>
