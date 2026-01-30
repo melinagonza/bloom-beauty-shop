@@ -2,36 +2,27 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Producto</title>
-<link rel="stylesheet" href="css.css">
+<title>Productos</title>
+<style>
+body{margin:0;font-family:Arial;background:#fff0f6;text-align:center;}
+header{background:#ff4da6;color:white;padding:15px;}
+.categoria{margin:40px;}
+a{display:block;margin:10px;font-size:20px;text-decoration:none;color:#b30059;font-weight:bold;}
+.volver{margin:40px;display:block;}
+</style>
 </head>
-
 <body>
 
-<header>
-    <h1>Bloom Beauty</h1>
-</header>
+<header><h2>Categorías</h2></header>
 
-<div class="producto">
-    <img id="imgProducto">
-    <h2 id="nombreProducto"></h2>
-    <p id="precioProducto"></p>
-
-    <h3>Datos del cliente</h3>
-    <input type="text" placeholder="Tu nombre">
-
-    <button onclick="pagar()">Ir a Formas de Pago</button>
+<div class="categoria">
+<a href="ojos.html">👁 Ojos</a>
+<a href="labios.html">💋 Labios</a>
+<a href="rostro.html">✨ Rostro</a>
+<a href="cuerpo.html">🌸 Cuerpo</a>
 </div>
 
-<script>
-document.getElementById("imgProducto").src = localStorage.getItem("imagen");
-document.getElementById("nombreProducto").textContent = localStorage.getItem("nombre");
-document.getElementById("precioProducto").textContent = localStorage.getItem("precio");
-
-function pagar(){
-    window.location.href = "pago.html";
-}
-</script>
+<a href="index.html" class="volver">⬅ Volver al inicio</a>
 
 </body>
 </html>
