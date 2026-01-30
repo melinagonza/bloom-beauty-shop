@@ -20,10 +20,16 @@ nav ul li a:hover { color:#ffe4f2; }
 .btn-hero:hover { background-color:#e60073; }
 
 .categorias { padding:60px 40px; text-align:center; }
-.contenedor-categorias { display:flex; gap:30px; justify-content:center; flex-wrap:wrap; }
-.tarjeta { background:#f8fafc; padding:30px; width:220px; text-decoration:none; color:#b30059; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-weight:bold; transition:0.2s; text-align:center; }
+.categorias h2 { margin-bottom:30px; }
+.contenedor-categorias { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; max-width:900px; margin:auto; }
+.tarjeta { background:#f8fafc; padding:20px; text-decoration:none; color:#b30059; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-weight:bold; transition:0.2s; text-align:center; cursor:pointer; }
 .tarjeta img { width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:10px; }
+.tarjeta span { display:block; margin-bottom:5px; font-size:18px; }
+.tarjeta p { margin:0; font-weight:bold; }
 .tarjeta:hover { transform:scale(1.05); background:#ffe4f2; }
+
+.btn-inicio { display:inline-block; margin-top:30px; padding:12px 28px; background:#ff4da6; color:white; border-radius:6px; text-decoration:none; font-weight:bold; }
+.btn-inicio:hover { background:#e60073; }
 
 .contacto { padding:60px 40px; text-align:center; background:#ff4da6; color:white; }
 .contacto h2 { margin-bottom:20px; font-size:32px; }
@@ -36,7 +42,7 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 .footer-contenedor li { margin-bottom:8px; }
 .footer-contenedor a { color:#ffe4f2; text-decoration:none; }
 .footer-copy { text-align:center; margin-top:20px; font-size:14px; }
-.redes-grid { display:flex; gap:15px; }
+.redes-grid { display:flex; gap:15px; justify-content:center; }
 .redes-grid a { background:#ff4da6; width:50px; height:50px; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none; font-size:22px; border-radius:8px; }
 </style>
 </head>
@@ -66,18 +72,27 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
         <a href="#ojos" class="tarjeta">
             <img src="ojos.jpg" alt="Ojos">
             <span>👁 Ojos</span>
+            <p>Desde $8</p>
         </a>
         <a href="#rostro" class="tarjeta">
             <img src="rostro.jpg" alt="Rostro">
             <span>✨ Rostro</span>
+            <p>Desde $12</p>
         </a>
     </div>
+    <a href="#inicio" class="btn-inicio">Volver al inicio</a>
 </section>
 
 <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
     <p>WhatsApp: 0959881164</p>
     <p>Email: bloombeauty@gmail.com</p>
+    <div class="redes-grid" style="margin-top:15px;">
+        <a href="#">📱</a>
+        <a href="#">📸</a>
+        <a href="#">🎵</a>
+        <a href="#">✨</a>
+    </div>
 </section>
 
 <footer>
