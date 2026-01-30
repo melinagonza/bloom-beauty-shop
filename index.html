@@ -4,40 +4,24 @@
 <meta charset="UTF-8">
 <title>Bloom Beauty</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body { margin:0; font-family: Arial, Helvetica, sans-serif; background: #fff0f6; }
 header { display:flex; justify-content:space-between; align-items:center; padding:15px 40px; background-color:#ff4da6; color:white; }
 .logo h1 { margin:0; font-size:28px; font-weight:bold; }
 nav ul { list-style:none; display:flex; gap:25px; margin:0; padding:0; }
 nav ul li a { text-decoration:none; color:white; font-size:16px; font-weight:bold; }
-nav ul li a:hover { color:#ffe4f2; }
 
 .hero { padding:80px 40px; text-align:center; }
 .hero h2 { font-size:42px; margin-bottom:20px; color:#b30059; }
 .hero p { font-size:18px; max-width:600px; margin:0 auto 30px; }
-.btn-hero { padding:12px 28px; background-color:#ff4da6; color:white; text-decoration:none; border-radius:6px; font-weight:bold; }
-.btn-hero:hover { background-color:#e60073; }
-
-.categorias { padding:60px 40px; text-align:center; }
-.categorias h2 { margin-bottom:30px; }
-.contenedor-categorias { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; max-width:900px; margin:auto; }
-.tarjeta { background:#f8fafc; padding:20px; text-decoration:none; color:#b30059; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-weight:bold; transition:0.2s; text-align:center; cursor:pointer; }
-.tarjeta span { font-size:20px; }
-.tarjeta:hover { transform:scale(1.05); background:#ffe4f2; }
 
 .contacto { padding:60px 40px; text-align:center; background:#ff4da6; color:white; }
-.contacto h2 { margin-bottom:20px; font-size:32px; }
-.contacto p { font-size:18px; margin:5px 0; }
 
 footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 .footer-contenedor { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1200px; margin:auto; }
-.footer-contenedor h3,h4 { margin-bottom:15px; }
-.footer-contenedor ul { list-style:none; padding:0; }
-.footer-contenedor a { color:#ffe4f2; text-decoration:none; }
 .footer-copy { text-align:center; margin-top:20px; font-size:13px; }
-.redes-grid { display:flex; gap:15px; justify-content:center; }
-.redes-grid a { background:#ff4da6; width:50px; height:50px; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none; font-size:22px; border-radius:8px; }
-
+.redes-grid a { font-size:22px; text-decoration:none; color:white; }
 </style>
 </head>
 
@@ -47,68 +31,3 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
     <div class="logo"><h1>Bloom Beauty</h1></div>
     <nav>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#categorias">Categorías</a></li>
-            <li><a href="pago.html">Pago</a></li>
-            <li><a href="#contacto">Contáctanos</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section id="inicio" class="hero">
-    <h2>Resalta tu belleza natural ✨</h2>
-    <p>Maquillaje y cuidado de piel para que luzcas siempre radiante y segura de ti misma.</p>
-    <a href="#contacto" class="btn-hero">Contáctanos</a>
-</section>
-
-<section id="categorias" class="categorias">
-    <h2>Categorías</h2>
-    <div class="contenedor-categorias">
-        <a href="ojos.html" class="tarjeta">👁 Ojos</a>
-        <a href="labios.html" class="tarjeta">💄 Labios</a>
-        <a href="rostro.html" class="tarjeta">✨ Rostro</a>
-        <a href="cuerpo.html" class="tarjeta">🌸 Cuerpo</a>
-    </div>
-</section>
-
-<section id="contacto" class="contacto">
-    <h2>Contáctanos</h2>
-    <p>WhatsApp: <a href="https://wa.me/0959881164" style="color:white;">0959881164</a></p>
-</section>
-
-<footer>
-    <div class="footer-contenedor">
-        <div>
-            <h3>Bloom Beauty</h3>
-            <p>Bloom Beauty realza tu belleza natural con productos modernos, accesibles y de calidad. Inspiramos confianza y expresión personal.</p>
-        </div>
-        <div>
-            <h4>Servicios</h4>
-            <ul>
-                <li>🚚 Entrega a domicilio</li>
-                <li>💄 Venta de cosméticos</li>
-            </ul>
-        </div>
-        <div>
-            <h4>Categorías</h4>
-            <ul>
-                <li>👁 Ojos</li>
-                <li>💄 Labios</li>
-                <li>✨ Rostro</li>
-                <li>🌸 Cuerpo</li>
-            </ul>
-        </div>
-        <div>
-            <h4>Redes Sociales</h4>
-            <div class="redes-grid">
-                <a href="https://wa.me/0959881164">📱</a>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copy">
-        © 2026 Bloom Beauty. Todos los derechos reservados.
-    </div>
-</footer>
-
-</body>
-</html>
