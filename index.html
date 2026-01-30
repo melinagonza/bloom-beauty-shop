@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#fff0f6; }
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background: #fff0f6; }
 header { display:flex; justify-content:space-between; align-items:center; padding:15px 40px; background-color:#ff4da6; color:white; }
 .logo h1 { margin:0; font-size:28px; font-weight:bold; }
 nav ul { list-style:none; display:flex; gap:25px; margin:0; padding:0; }
@@ -20,16 +20,21 @@ nav ul li a:hover { color:#ffe4f2; }
 .btn-hero:hover { background-color:#e60073; }
 
 .categorias { padding:60px 40px; text-align:center; }
-.categorias h2 { margin-bottom:30px; }
-.contenedor-categorias { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; max-width:900px; margin:auto; }
-.tarjeta { background:#f8fafc; padding:20px; text-decoration:none; color:#b30059; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-weight:bold; transition:0.2s; text-align:center; cursor:pointer; }
-.tarjeta img { width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:10px; }
-.tarjeta span { display:block; margin-bottom:5px; font-size:18px; }
-.tarjeta p { margin:0; font-weight:bold; }
+.contenedor-categorias { display:flex; gap:30px; justify-content:center; flex-wrap:wrap; }
+.tarjeta { background:#f8fafc; padding:30px; width:220px; text-decoration:none; color:#b30059; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-weight:bold; transition:0.2s; }
 .tarjeta:hover { transform:scale(1.05); background:#ffe4f2; }
 
-.btn-inicio { display:inline-block; margin-top:30px; padding:12px 28px; background:#ff4da6; color:white; border-radius:6px; text-decoration:none; font-weight:bold; }
-.btn-inicio:hover { background:#e60073; }
+.galeria { padding:60px 40px; text-align:center; }
+.grid-galeria { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1000px; margin:auto; }
+.item-galeria img { width:100%; height:220px; object-fit:cover; border-radius:12px; }
+.item-galeria a { display:block; margin-top:10px; text-decoration:none; font-weight:bold; color:#b30059; }
+
+.tienda { padding:60px 40px; text-align:center; }
+.grid-tienda { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1000px; margin:auto; }
+.producto { background:#f8fafc; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; }
+.producto img { width:100%; height:200px; object-fit:cover; border-radius:8px; }
+.producto button { margin-top:10px; padding:10px 20px; background:#ff4da6; border:none; color:white; border-radius:6px; cursor:pointer; font-weight:bold; }
+.producto button:hover { background:#e60073; }
 
 .contacto { padding:60px 40px; text-align:center; background:#ff4da6; color:white; }
 .contacto h2 { margin-bottom:20px; font-size:32px; }
@@ -37,12 +42,11 @@ nav ul li a:hover { color:#ffe4f2; }
 
 footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 .footer-contenedor { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; max-width:1200px; margin:auto; }
-.footer-contenedor h3 { margin-bottom:15px; }
+.footer-contenedor h3,h4 { margin-bottom:15px; }
 .footer-contenedor ul { list-style:none; padding:0; }
-.footer-contenedor li { margin-bottom:8px; }
 .footer-contenedor a { color:#ffe4f2; text-decoration:none; }
-.footer-copy { text-align:center; margin-top:20px; font-size:14px; }
-.redes-grid { display:flex; gap:15px; justify-content:center; }
+.footer-copy { text-align:center; margin-top:20px; font-size:13px; }
+.redes-grid { display:grid; grid-template-columns:repeat(4,50px); gap:15px; justify-content:start; }
 .redes-grid a { background:#ff4da6; width:50px; height:50px; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none; font-size:22px; border-radius:8px; }
 </style>
 </head>
@@ -55,6 +59,8 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#categorias">Categorías</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#tienda">Productos</a></li>
             <li><a href="#contacto">Contáctanos</a></li>
         </ul>
     </nav>
@@ -69,43 +75,87 @@ footer { background-color:#b30059; color:white; padding:50px 40px 20px; }
 <section id="categorias" class="categorias">
     <h2>Categorías</h2>
     <div class="contenedor-categorias">
-        <a href="#ojos" class="tarjeta">
-            <img src="ojos.jpg" alt="Ojos">
-            <span>👁 Ojos</span>
-            <p>Desde $8</p>
-        </a>
-        <a href="#rostro" class="tarjeta">
-            <img src="rostro.jpg" alt="Rostro">
-            <span>✨ Rostro</span>
-            <p>Desde $12</p>
-        </a>
+        <a href="#ojos" class="tarjeta">👁 Ojos</a>
+        <a href="#labios" class="tarjeta">💄 Labios</a>
+        <a href="#rostro" class="tarjeta">✨ Rostro</a>
+        <a href="#cuerpo" class="tarjeta">🌸 Cuerpo</a>
     </div>
-    <a href="#inicio" class="btn-inicio">Volver al inicio</a>
+</section>
+
+<section id="galeria" class="galeria">
+    <h2>Galería</h2>
+    <div class="grid-galeria">
+        <div class="item-galeria">
+            <img src="ojos.jpg" alt="Ojos">
+            <a href="#ojos">Ojos</a>
+        </div>
+        <div class="item-galeria">
+            <img src="labios.jpg" alt="Labios">
+            <a href="#labios">Labios</a>
+        </div>
+        <div class="item-galeria">
+            <img src="rostro.jpg" alt="Rostro">
+            <a href="#rostro">Rostro</a>
+        </div>
+        <div class="item-galeria">
+            <img src="cuerpo.jpg" alt="Cuerpo">
+            <a href="#cuerpo">Cuerpo</a>
+        </div>
+    </div>
+</section>
+
+<section id="tienda" class="tienda">
+    <h2>Nuestros Productos</h2>
+    <div class="grid-tienda">
+        <div class="producto">
+            <img src="producto1.jpg" alt="Paleta de sombras">
+            <h3>Paleta de Sombras</h3>
+            <p>$12.00</p>
+            <button>Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="producto2.jpg" alt="Labial Matte">
+            <h3>Labial Matte</h3>
+            <p>$6.00</p>
+            <button>Agregar al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="producto3.jpg" alt="Base líquida">
+            <h3>Base Líquida</h3>
+            <p>$10.00</p>
+            <button>Agregar al carrito</button>
+        </div>
+    </div>
 </section>
 
 <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
     <p>WhatsApp: 0959881164</p>
     <p>Email: bloombeauty@gmail.com</p>
-    <div class="redes-grid" style="margin-top:15px;">
-        <a href="#">📱</a>
-        <a href="#">📸</a>
-        <a href="#">🎵</a>
-        <a href="#">✨</a>
-    </div>
 </section>
 
 <footer>
     <div class="footer-contenedor">
         <div>
             <h3>Bloom Beauty</h3>
-            <p>Bloom Beauty es una tienda online de maquillaje y cuidado facial que ofrece productos de calidad para resaltar tu belleza y estilo personal.</p>
+            <p>Bloom Beauty realza tu belleza natural con productos modernos, accesibles y de calidad. Inspiramos confianza y expresión personal.</p>
+        </div>
+        <div>
+            <h4>Servicios</h4>
+            <ul>
+                <li>Asesoría de maquillaje</li>
+                <li>Venta de productos</li>
+                <li>Contenido educativo</li>
+                <li>Atención personalizada</li>
+            </ul>
         </div>
         <div>
             <h4>Categorías</h4>
             <ul>
                 <li>Ojos</li>
+                <li>Labios</li>
                 <li>Rostro</li>
+                <li>Cuerpo</li>
             </ul>
         </div>
         <div>
