@@ -10,7 +10,7 @@ header { background:#ff4da6; padding:15px; text-align:center; color:white; }
 h1,h2 { text-align:center; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:30px; max-width:1000px; margin:auto; }
 .card { background:white; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-.card img { width:100%; border-radius:10px; }
+.card img { width:100%; border-radius:10px; height:220px; object-fit:cover; }
 button { background:#ff1493; color:white; border:none; padding:10px 15px; border-radius:20px; cursor:pointer; margin-top:10px; font-weight:bold; }
 button:hover { background:#e60073; }
 .volver { display:block; text-align:center; margin:40px; color:#ff4da6; text-decoration:none; font-weight:bold; }
@@ -31,31 +31,51 @@ button:hover { background:#e60073; }
 
 <div class="grid">
 
-    <div class="card" data-nombre="Paleta de Sombras" data-precio="12">
-        <img src="ojos.jpg" alt="Paleta Sombras">
-        <h3>Paleta Sombras</h3>
-        <p>$12</p>
+    <!-- Gloss -->
+    <div class="card" data-nombre="Gloss" data-precio="1">
+        <img src="img/WhatsApp Image 2026-01-30 at 01.12.50.jpeg" alt="Gloss">
+        <h3>Gloss</h3>
+        <p>$1.00</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <div class="card" data-nombre="Labial Mate" data-precio="5">
-        <img src="labios.jpg" alt="Labial Mate">
-        <h3>Labial Mate</h3>
-        <p>$5</p>
+    <!-- Colágeno para labios -->
+    <div class="card" data-nombre="Colágeno para Labios" data-precio="0.75">
+        <img src="img/WhatsApp Image 2026-01-30 at 01.18.34(1).jpeg" alt="Colágeno para Labios">
+        <h3>Colágeno para Labios</h3>
+        <p>$0.75</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <div class="card" data-nombre="Base Líquida" data-precio="10">
-        <img src="rostro.jpg" alt="Base Líquida">
-        <h3>Base Líquida</h3>
-        <p>$10</p>
+    <!-- Parchecitos para el acné -->
+    <div class="card" data-nombre="Parchecitos para Acné" data-precio="1.25">
+        <img src="img/WhatsApp Image 2026-01-30 at 13.14.10.jpeg" alt="Parchecitos para Acné">
+        <h3>Parchecitos para Acné</h3>
+        <p>$1.25</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <div class="card" data-nombre="Crema Corporal" data-precio="8">
-        <img src="cuerpo.jpg" alt="Crema Corporal">
-        <h3>Crema Corporal</h3>
-        <p>$8</p>
+    <!-- Delineadores de labios -->
+    <div class="card" data-nombre="Delineadores de Labios" data-precio="1.25">
+        <img src="img/WhatsApp Image 2026-01-30 at 13.14.19.jpeg" alt="Delineadores de Labios">
+        <h3>Delineadores de Labios</h3>
+        <p>$1.25</p>
+        <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
+    </div>
+
+    <!-- Bálsamo con color -->
+    <div class="card" data-nombre="Bálsamo con Color" data-precio="1">
+        <img src="img/WhatsApp Image 2026-01-30 at 13.14.32.jpeg" alt="Bálsamo con Color">
+        <h3>Bálsamo con Color</h3>
+        <p>$1.00</p>
+        <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
+    </div>
+
+    <!-- Primer -->
+    <div class="card" data-nombre="Primer" data-precio="0.75">
+        <img src="img/WhatsApp Image 2026-01-30 at 13.14.49.jpeg" alt="Primer">
+        <h3>Primer</h3>
+        <p>$0.75</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
@@ -80,7 +100,6 @@ function agregarAlCarrito(button){
     const nombre = card.getAttribute('data-nombre');
     const precio = parseFloat(card.getAttribute('data-precio'));
 
-    // Traer carrito actual del localStorage o crear uno nuevo
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito.push({nombre, precio});
     localStorage.setItem('carrito', JSON.stringify(carrito));
