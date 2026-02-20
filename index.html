@@ -2,32 +2,39 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Bloom Beauty ✨</title>
+<title>Bloom Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- TIPOGRAFÍA BONITA -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+html, body{
     margin:0;
+    padding:0;
     font-family:'Poppins', sans-serif;
     background:#fff0f6;
+    min-height:100vh;
 }
 
 /* HEADER */
 header{
     background:#ff4da6;
-    padding:18px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-.logo-img{
-    width:40px;
-    height:40px;
+.logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+
+.logo img{
+    width:42px;
+    height:42px;
     border-radius:50%;
 }
 
@@ -37,56 +44,81 @@ header{
     color:white;
 }
 
-/* PRODUCTOS */
-.container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
-    padding:30px;
-}
-
-.card{
-    background:white;
-    border-radius:16px;
-    padding:15px;
+/* HERO */
+.hero{
     text-align:center;
-    box-shadow:0 6px 15px rgba(0,0,0,0.08);
-    cursor:pointer;
-    transition:0.3s;
+    padding:50px 20px 30px;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.hero h1{
+    font-family:'Playfair Display', serif;
+    font-size:36px;
+    color:#b30059;
+    margin-bottom:10px;
 }
 
-img{
-    width:100%;
-    border-radius:12px;
+.hero p{
+    color:#555;
+    font-size:16px;
 }
 
-button{
+/* BOTONES PRINCIPALES */
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    padding:30px 20px;
+}
+
+.menu a{
+    text-decoration:none;
+}
+
+.menu button{
     background:#ff1493;
     color:white;
     border:none;
-    padding:10px 18px;
+    padding:12px 22px;
     border-radius:25px;
     cursor:pointer;
-    margin-top:10px;
-    font-weight:bold;
+    font-weight:500;
+    transition:0.3s;
+    font-size:15px;
 }
 
-/* CARRITO */
-#carrito{
-    background:#ffe4f1;
-    padding:20px;
-    margin:20px;
-    border-radius:16px;
+.menu button:hover{
+    background:#e60073;
+    transform:translateY(-2px);
 }
 
+/* SECCIONES */
+.section{
+    background:white;
+    margin:20px auto;
+    max-width:900px;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.section h2{
+    font-family:'Playfair Display', serif;
+    color:#b30059;
+    text-align:center;
+}
+
+.section p{
+    color:#555;
+    text-align:center;
+}
+
+/* FOOTER */
 footer{
     text-align:center;
-    padding:20px;
+    padding:30px;
     color:#b30059;
+    font-size:14px;
 }
 
 </style>
@@ -95,62 +127,31 @@ footer{
 <body>
 
 <header>
-    <img src="img/logo.png" class="logo-img">
-    <div class="logo-text">Bloom Beauty ✨</div>
+    <div class="logo">
+        <img src="img/logo.png">
+        <div class="logo-text">Bloom Beauty ✨</div>
+    </div>
 </header>
 
-<div class="container">
-
-    <div class="card" onclick="verProducto('gloss.html')">
-        <img src="img/gloss.jpeg">
-        <h3>Gloss</h3>
-        <p>$1.00</p>
-        <button onclick="event.stopPropagation(); agregar('Gloss',1)">Añadir</button>
-    </div>
-
-    <div class="card" onclick="verProducto('rubor.html')">
-        <img src="img/rubor.jpeg">
-        <h3>Rubor</h3>
-        <p>$2.00</p>
-        <button onclick="event.stopPropagation(); agregar('Rubor',2)">Añadir</button>
-    </div>
-
+<div class="hero">
+    <h1>Bienvenida 💖</h1>
+    <p>Tu tienda de belleza favorita ✨</p>
 </div>
 
-<div id="carrito">
-    <h2>Carrito 🛒</h2>
-    <ul id="lista"></ul>
+<div class="menu">
+    <a href="productos.html"><button>🛍 Ver productos</button></a>
+    <a href="pagos.html"><button>💵 Formas de pago</button></a>
+    <a href="faq.html"><button>❓ Preguntas frecuentes</button></a>
+</div>
+
+<div class="section">
+    <h2>🌸 Sobre Bloom Beauty</h2>
+    <p>Productos seleccionados para resaltar tu belleza ✨</p>
 </div>
 
 <footer>
-    <a href="info.html">Preguntas frecuentes 💖</a>
+    Bloom Beauty ✨ | Todos los derechos reservados 💖
 </footer>
-
-<script>
-
-function verProducto(pagina){
-    window.location.href = pagina;
-}
-
-function agregar(nombre,precio){
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push({nombre,precio});
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    mostrar();
-}
-
-function mostrar(){
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    let lista = document.getElementById('lista');
-    lista.innerHTML='';
-    carrito.forEach(p=>{
-        lista.innerHTML+=`<li>${p.nombre} - $${p.precio}</li>`;
-    });
-}
-
-mostrar();
-
-</script>
 
 </body>
 </html>
