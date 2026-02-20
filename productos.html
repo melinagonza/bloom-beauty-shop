@@ -2,78 +2,197 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Productos | Bloom Beauty</title>
+<title>Bloom Beauty</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Tipografías bonitas -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-body { margin:0; font-family:Arial, sans-serif; background:#fff0f6; }
-header { background:#ff4da6; padding:15px; text-align:center; color:white; }
-h1,h2 { text-align:center; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; padding:30px; max-width:1000px; margin:auto; }
-.card { background:white; border-radius:12px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-.card img { width:100%; border-radius:10px; height:220px; object-fit:cover; }
-button { background:#ff1493; color:white; border:none; padding:10px 15px; border-radius:20px; cursor:pointer; margin-top:10px; font-weight:bold; }
-button:hover { background:#e60073; }
-.volver { display:block; text-align:center; margin:40px; color:#ff4da6; text-decoration:none; font-weight:bold; }
-#carrito { background:white; padding:20px; margin:20px auto; max-width:600px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-#carrito h2 { text-align:center; color:#b30059; }
-#carrito ul { list-style:none; padding:0; }
-#carrito li { margin:10px 0; display:flex; justify-content:space-between; align-items:center; }
-.total { font-weight:bold; margin-top:15px; text-align:right; }
+
+html, body{
+    margin:0;
+    padding:0;
+    font-family:'Poppins', sans-serif;
+    background:#fff0f6;
+}
+
+/* Header */
+header{
+    background:#ff4da6;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+    color:white;
+}
+
+/* Títulos */
+h1, h2, h3{
+    font-family:'Playfair Display', serif;
+    text-align:center;
+}
+
+/* Grid productos */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    padding:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* Tarjetas */
+.card{
+    background:white;
+    border-radius:16px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    border-radius:12px;
+}
+
+/* Botones */
+button{
+    background:#ff1493;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#e60073;
+}
+
+/* Carrito */
+#carrito{
+    background:white;
+    padding:25px;
+    margin:30px auto;
+    max-width:700px;
+    border-radius:16px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+
+#carrito ul{
+    list-style:none;
+    padding:0;
+}
+
+#carrito li{
+    display:flex;
+    justify-content:space-between;
+    margin:8px 0;
+}
+
+/* FAQ */
+.faq{
+    background:white;
+    margin:40px auto;
+    padding:25px;
+    max-width:900px;
+    border-radius:16px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+
+.pregunta{
+    margin-bottom:15px;
+}
+
+/* Botón pedido */
+.boton-pedido{
+    display:block;
+    width:260px;
+    margin:30px auto;
+    text-align:center;
+    background:#ff1493;
+    color:white;
+    padding:12px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.boton-pedido:hover{
+    background:#e60073;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    color:#b30059;
+    font-size:14px;
+}
+
 </style>
 </head>
+
 <body>
 
 <header>
-    <h2>Productos - Bloom Beauty</h2>
+    <div class="logo">Bloom Beauty ✨</div>
 </header>
 
 <h1>Productos disponibles 💄</h1>
 
 <div class="grid">
 
-    <!-- Gloss -->
     <div class="card" data-nombre="Gloss" data-precio="1">
-        <img src="img/WhatsApp Image 2026-01-30 at 01.12.50.jpeg" alt="Gloss">
+        <img src="img/WhatsApp Image 2026-01-30 at 01.12.50.jpeg">
         <h3>Gloss</h3>
         <p>$1.00</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <!-- Colágeno para labios -->
-    <div class="card" data-nombre="Colágeno para Labios" data-precio="0.75">
-        <img src="img/WhatsApp Image 2026-01-30 at 01.18.34(1).jpeg" alt="Colágeno para Labios">
-        <h3>Colágeno para Labios</h3>
+    <div class="card" data-nombre="Colágeno para labios" data-precio="0.75">
+        <img src="img/WhatsApp Image 2026-01-30 at 01.18.34(1).jpeg">
+        <h3>Colágeno para labios</h3>
         <p>$0.75</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <!-- Parchecitos para el acné -->
-    <div class="card" data-nombre="Parchecitos para Acné" data-precio="1.25">
-        <img src="img/WhatsApp Image 2026-01-30 at 13.14.10.jpeg" alt="Parchecitos para Acné">
-        <h3>Parchecitos para Acné</h3>
+    <div class="card" data-nombre="Parchecitos para acné" data-precio="1.25">
+        <img src="img/WhatsApp Image 2026-01-30 at 13.14.10.jpeg">
+        <h3>Parchecitos para acné</h3>
         <p>$1.25</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <!-- Delineadores de labios -->
-    <div class="card" data-nombre="Delineadores de Labios" data-precio="1.25">
-        <img src="img/WhatsApp Image 2026-01-30 at 13.14.19.jpeg" alt="Delineadores de Labios">
-        <h3>Delineadores de Labios</h3>
+    <div class="card" data-nombre="Delineadores de labios" data-precio="1.25">
+        <img src="img/WhatsApp Image 2026-01-30 at 13.14.19.jpeg">
+        <h3>Delineadores de labios</h3>
         <p>$1.25</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <!-- Bálsamo con color -->
-    <div class="card" data-nombre="Bálsamo con Color" data-precio="1">
-        <img src="img/WhatsApp Image 2026-01-30 at 13.14.32.jpeg" alt="Bálsamo con Color">
-        <h3>Bálsamo con Color</h3>
+    <div class="card" data-nombre="Bálsamo con color" data-precio="1">
+        <img src="img/WhatsApp Image 2026-01-30 at 13.14.32.jpeg">
+        <h3>Bálsamo con color</h3>
         <p>$1.00</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
     </div>
 
-    <!-- Primer -->
     <div class="card" data-nombre="Primer" data-precio="0.75">
-        <img src="img/WhatsApp Image 2026-01-30 at 13.14.49.jpeg" alt="Primer">
+        <img src="img/WhatsApp Image 2026-01-30 at 13.14.49.jpeg">
         <h3>Primer</h3>
         <p>$0.75</p>
         <button onclick="agregarAlCarrito(this)">Añadir al carrito</button>
@@ -83,18 +202,44 @@ button:hover { background:#e60073; }
 
 <!-- Carrito -->
 <div id="carrito">
-    <h2>🛒 Carrito de Compras</h2>
+    <h2>🛒 Carrito</h2>
     <ul id="lista-carrito"></ul>
-    <p class="total">Costo de envío: $2.50</p>
-    <p class="total">Total: $<span id="total">0</span></p>
+    <p><strong>Envío:</strong> $2.50</p>
+    <p><strong>Total:</strong> $<span id="total">0</span></p>
 </div>
 
-<a href="index.html" class="volver">⬅ Volver al inicio</a>
+<a href="pedido.html" class="boton-pedido">
+    Realizar pedido 🛍️
+</a>
+
+<!-- FAQ -->
+<section class="faq">
+    <h2>Preguntas Frecuentes ❓</h2>
+
+    <div class="pregunta">
+        <h3>¿Cómo se paga?</h3>
+        <p>El pago se realiza en efectivo al momento de la entrega.</p>
+    </div>
+
+    <div class="pregunta">
+        <h3>¿Dónde se entrega?</h3>
+        <p>Las entregas se realizan en el colegio o punto acordado.</p>
+    </div>
+
+    <div class="pregunta">
+        <h3>¿Colores disponibles?</h3>
+        <p>Los colores varían según disponibilidad.</p>
+    </div>
+</section>
+
+<footer>
+    Bloom Beauty ✨ | Tienda Online
+</footer>
 
 <script>
+
 const costoEnvio = 2.5;
 
-// Función para agregar productos al carrito
 function agregarAlCarrito(button){
     const card = button.parentElement;
     const nombre = card.getAttribute('data-nombre');
@@ -104,11 +249,9 @@ function agregarAlCarrito(button){
     carrito.push({nombre, precio});
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
-    alert(`${nombre} agregado al carrito ✅`);
     mostrarCarrito();
 }
 
-// Mostrar carrito
 function mostrarCarrito(){
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const lista = document.getElementById('lista-carrito');
@@ -118,7 +261,7 @@ function mostrarCarrito(){
     carrito.forEach((item, index) => {
         const li = document.createElement('li');
         li.innerHTML = `${item.nombre} - $${item.precio.toFixed(2)}
-                        <button onclick="eliminar(${index})" style="background:red;color:white;border:none;border-radius:6px;padding:2px 6px; cursor:pointer;">X</button>`;
+        <button onclick="eliminar(${index})">X</button>`;
         lista.appendChild(li);
         totalProductos += item.precio;
     });
@@ -127,7 +270,6 @@ function mostrarCarrito(){
     document.getElementById('total').textContent = totalFinal.toFixed(2);
 }
 
-// Eliminar del carrito
 function eliminar(index){
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito.splice(index, 1);
@@ -135,10 +277,9 @@ function eliminar(index){
     mostrarCarrito();
 }
 
-// Cargar carrito al abrir la página
-window.onload = function(){
-    mostrarCarrito();
-}
+window.onload = mostrarCarrito;
+
 </script>
+
 </body>
 </html>
