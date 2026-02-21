@@ -216,3 +216,219 @@ window.onload = cargarCarrito;
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito | Bloom Beauty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin:0;
+            font-family:'Poppins', sans-serif;
+            background:#fff0f6; /* mismo fondo que portada */
+            color:#333;
+        }
+
+        header {
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:18px 40px;
+            border-bottom:1px solid #f1f1f1;
+            background:white;
+        }
+
+        .logo {
+            font-family:'Playfair Display', serif;
+            font-size:26px;
+            font-weight:600;
+        }
+
+        nav {
+            display:flex;
+            gap:20px;
+        }
+
+        nav a {
+            text-decoration:none;
+            color:#555;
+            font-weight:500;
+            font-size:14px;
+        }
+
+        nav a:hover {
+            color:#f5a3c7;
+        }
+
+        .title {
+            text-align:center;
+            padding:60px 20px 40px;
+            font-family:'Playfair Display', serif;
+            font-size:46px;
+        }
+
+        .cart-container {
+            max-width:800px;
+            margin:0 auto 60px;
+            background:white; /* panel blanco */
+            border-radius:18px;
+            padding:30px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .cart-item {
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:15px;
+            border-bottom:1px solid #eee;
+            padding-bottom:10px;
+        }
+
+        .cart-item:last-child { border-bottom:none; }
+
+        .cart-item div { flex:1; }
+
+        .cart-item h4 { margin:0; font-size:16px; }
+        .cart-item span { color:#888; }
+
+        .total { text-align:right; margin-top:15px; font-weight:600; }
+
+        button {
+            padding:12px 28px;
+            border-radius:30px;
+            border:none;
+            background:#f5a3c7;
+            color:white;
+            font-size:14px;
+            cursor:pointer;
+            transition:0.3s;
+            margin-top:20px;
+        }
+
+        button:hover { background:#ec8fb8; }
+
+        .payment-form { margin-top:30px; display:none; flex-direction:column; gap:15px; }
+
+        .payment-form input, .payment-form select {
+            padding:10px;
+            border-radius:8px;
+            border:1px solid #ccc;
+            font-size:14px;
+        }
+
+        .hidden { display:none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Bloom Beauty ✨</div>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="carrito.html">Carrito 🛒</a>
+    </nav>
+</header>
+
+<div class="title">Carrito de Compras ✨</div>
+
+<div class="cart-container">
+    <div id="cart-items"></div>
+    <div class="total" id="total"></div>
+    <button id="checkout">Continuar con el Pago</button>
+
+    <div class="payment-form" id="payment-form">
+        <label>¿Eres ESTUDIANTE DEL BERNARDO VALDIVIESO o CLIENTE?</label>
+        <select id="tipo-cliente">
+            <option value="">Seleccione</option>
+            <option value="estudiante">ESTUDIANTE DEL BERNARDO VALDIVIESO</option>
+            <option value="cliente">CLIENTE</option>
+        </select>
+
+        <div id="estudiante-fields" class="hidden">
+            <input type="text" id="estudiante-nombre" placeholder="Nombre completo">
+            <input type="text" id="curso" placeholder="Curso">
+            <input type="text" id="paralelo" placeholder="Paralelo">
+            <input type="email" id="correo-estudiante" placeholder="Correo electrónico">
+        </div>
+
+        <div id="cliente-fields" class="hidden">
+            <input type="text" id="cliente-nombre" placeholder="Nombre completo">
+            <input type="text" id="direccion" placeholder="Dirección">
+            <input type="text" id="correo-cliente" placeholder="Correo electrónico">
+        </div>
+
+        <label>Forma de pago:</label>
+        <select id="metodo-pago">
+            <option value="">Seleccione</option>
+            <option value="presencial">Presencial</option>
+            <option value="transferencia">Transferencia (QR)</option>
+        </select>
+
+        <div id="qr" class="hidden">
+            <p>Escanea este código para pagar:</p>
+            <img src="img/qr.png" alt="QR de pago" style="width:200px;">
+            <input type="file" id="comprobante" accept="image/*">
+        </div>
+
+        <button id="finalizar">Finalizar Compra</button>
+    </div>
+</div>
+
+<script>
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+function mostrarCarrito() {
+    const container = document.getElementById('cart-items');
+    container.innerHTML = '';
+    let total = 0;
+    carrito.forEach(item=>{
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `<div><h4>${item.nombre}</h4></div><div><span>$${item.precio.toFixed(2)}</span></div>`;
+        container.appendChild(div);
+        total += item.precio;
+    });
+    document.getElementById('total').innerText = `Total: $${total.toFixed(2)}`;
+}
+
+mostrarCarrito();
+
+document.getElementById('checkout').addEventListener('click', ()=>{
+    document.getElementById('payment-form').style.display='flex';
+});
+
+document.getElementById('tipo-cliente').addEventListener('change', function(){
+    if(this.value==='estudiante'){
+        document.getElementById('estudiante-fields').classList.remove('hidden');
+        document.getElementById('cliente-fields').classList.add('hidden');
+    } else if(this.value==='cliente'){
+        document.getElementById('cliente-fields').classList.remove('hidden');
+        document.getElementById('estudiante-fields').classList.add('hidden');
+    } else {
+        document.getElementById('estudiante-fields').classList.add('hidden');
+        document.getElementById('cliente-fields').classList.add('hidden');
+    }
+});
+
+document.getElementById('metodo-pago').addEventListener('change', function(){
+    if(this.value==='transferencia'){
+        document.getElementById('qr').classList.remove('hidden');
+    } else {
+        document.getElementById('qr').classList.add('hidden');
+    }
+});
+
+document.getElementById('finalizar').addEventListener('click', ()=>{
+    alert("¡Gracias por tu compra! 💖");
+    localStorage.removeItem('carrito');
+    location.reload();
+});
+</script>
+
+</body>
+</html>
