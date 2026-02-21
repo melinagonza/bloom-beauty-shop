@@ -29,6 +29,18 @@
             top: 0;
         }
 
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-area img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+        }
+
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 26px;
@@ -76,7 +88,8 @@
             margin-bottom: 30px;
         }
 
-        .sparkle {
+        /* BRILLITOS */
+        .sparkles {
             color: #f5a3c7;
         }
 
@@ -145,7 +158,11 @@
 
 <header>
 
-    <div class="logo">Bloom Beauty ✨</div>
+    <div class="logo-area">
+        <!-- TU LOGO -->
+        <img src="img/logo.png">
+        <div class="logo">Bloom Beauty ✨</div>
+    </div>
 
     <nav>
         <a href="productos.html">Productos</a>
@@ -159,7 +176,12 @@
 </header>
 
 <section class="hero">
-    <h1>Bienvenida ✨</h1>
+    <h1>
+        <span class="sparkles">✨</span> 
+        Bienvenida 
+        <span class="sparkles">✨</span>
+    </h1>
+
     <p>Tu espacio de belleza, brillo y estilo</p>
 
     <div class="buttons">
