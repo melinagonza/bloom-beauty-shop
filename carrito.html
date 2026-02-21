@@ -8,228 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
     <style>
-        body { 
-            margin:0; 
-            font-family:'Poppins', sans-serif; 
-            background:#fff0f6; /* rosa pálido */ 
-            color:#333; 
-        }
-        header { 
-            display:flex; 
-            align-items:center; 
-            justify-content:space-between; 
-            padding:18px 40px; 
-            border-bottom:1px solid #f1f1f1; 
-            background:white; 
-        }
-        .logo { font-family:'Playfair Display', serif; font-size:26px; font-weight:600; }
-        nav { display:flex; gap:20px; }
-        nav a { text-decoration:none; color:#555; font-weight:500; font-size:14px; }
-        nav a:hover { color:#f5a3c7; }
-
-        .title { text-align:center; padding:40px; font-family:'Playfair Display', serif; font-size:32px; }
-        .container { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:25px; padding:0 40px; max-width:1100px; margin:auto; }
-        .card { background:white; border-radius:18px; padding:15px; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.06); display:flex; flex-direction:column; justify-content:space-between; height:100%; }
-        .card img { width:100%; height:200px; object-fit:contain; border-radius:14px; margin-bottom:10px; }
-        .card h3 { margin:10px 0 5px; font-size:16px; }
-        .price { color:#888; margin:5px 0; }
-        button { margin-top:auto; padding:12px; border-radius:30px; border:none; background:#f5a3c7; color:white; font-size:14px; cursor:pointer; transition:0.3s; }
-        button:hover { background:#ec8fb8; }
-
-        /* FORMULARIO DE PAGO */
-        #formPago { max-width:600px; margin:40px auto; display:none; padding:20px; border:1px solid #f1f1f1; border-radius:15px; background:#fffaf3; }
-        #formPago h2 { font-family:'Playfair Display', serif; font-size:24px; text-align:center; margin-bottom:20px; }
-        #formPago label { display:block; margin-top:15px; font-weight:500; }
-        #formPago input, #formPago select { width:100%; padding:10px; margin-top:5px; border-radius:8px; border:1px solid #ccc; }
-        #formPago button { margin-top:20px; width:100%; }
-        .qr { text-align:center; margin-top:20px; }
-    </style>
-</head>
-<body>
-
-<header>
-    <div class="logo">Bloom Beauty ✨</div>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="carrito.html">Carrito 🛒</a>
-    </nav>
-</header>
-
-<div class="title">Tu Carrito ✨</div>
-
-<div class="container" id="carritoContainer">
-    <!-- Productos agregados -->
-</div>
-
-<div class="title" id="total">Total: $0.00</div>
-
-<div style="text-align:center; margin:30px;">
-    <button onclick="mostrarFormulario()">Continuar con el pago</button>
-</div>
-
-<!-- FORMULARIO DE PAGO DINÁMICO -->
-<div id="formPago">
-    <h2>Formulario de Pago</h2>
-    
-    <label>¿Eres ESTUDIANTE DEL BERNARDO VALDIVIESO o CLIENTE NORMAL?</label>
-    <select id="tipoCliente" onchange="mostrarCampos()">
-        <option value="">Selecciona</option>
-        <option value="estudiante">ESTUDIANTE DEL BERNARDO VALDIVIESO</option>
-        <option value="cliente">CLIENTE NORMAL</option>
-    </select>
-
-    <div id="camposEstudiante" style="display:none;">
-        <label>Nombre completo:</label>
-        <input type="text" id="nombreEstudiante">
-
-        <label>Curso:</label>
-        <input type="text" id="cursoEstudiante">
-
-        <label>Paralelo:</label>
-        <input type="text" id="paraleloEstudiante">
-
-        <label>Correo electrónico:</label>
-        <input type="email" id="correoEstudiante">
-
-        <label>Forma de pago:</label>
-        <select id="pagoEstudiante" onchange="mostrarPagoEstudiante()">
-            <option value="">Selecciona</option>
-            <option value="presencial">Presencial</option>
-            <option value="online">Online / Transferencia</option>
-        </select>
-
-        <div id="camposPagoEstudiante" style="display:none;">
-            <div id="direccionEstudiante" style="display:none;">
-                <label>Dirección:</label>
-                <input type="text" id="dirEstudiante">
-                <label>Número de casa:</label>
-                <input type="text" id="numCasaEstudiante">
-            </div>
-            <div id="qrEstudiante" style="display:none;">
-                <div class="qr">
-                    <p>Escanea este QR para pagar:</p>
-                    <img src="img/qr.png" alt="QR de pago" width="200">
-                    <label>Sube tu comprobante:</label>
-                    <input type="file" id="comprobanteEstudiante">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="camposCliente" style="display:none;">
-        <label>Nombre completo:</label>
-        <input type="text" id="nombreCliente">
-
-        <label>Correo electrónico:</label>
-        <input type="email" id="correoCliente">
-
-        <label>Forma de pago:</label>
-        <select id="pagoCliente" onchange="mostrarPagoCliente()">
-            <option value="">Selecciona</option>
-            <option value="presencial">Presencial</option>
-            <option value="online">Online / Transferencia</option>
-        </select>
-
-        <div id="camposPagoCliente" style="display:none;">
-            <div id="direccionCliente" style="display:none;">
-                <label>Dirección:</label>
-                <input type="text" id="dirCliente">
-                <label>Número de casa:</label>
-                <input type="text" id="numCasaCliente">
-            </div>
-            <div id="qrCliente" style="display:none;">
-                <div class="qr">
-                    <p>Escanea este QR para pagar:</p>
-                    <img src="img/qr.png" alt="QR de pago" width="200">
-                    <label>Sube tu comprobante:</label>
-                    <input type="file" id="comprobanteCliente">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <button onclick="finalizarCompra()">Finalizar Compra</button>
-</div>
-
-<script>
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-function cargarCarrito() {
-    const container = document.getElementById('carritoContainer');
-    container.innerHTML = '';
-    let total = 0;
-
-    carrito.forEach((item) => {
-        total += item.precio;
-        const div = document.createElement('div');
-        div.className = 'card';
-        div.innerHTML = `
-            <img src="img/${item.nombre.toLowerCase().replace(/ /g,'').normalize('NFD').replace(/[\u0300-\u036f]/g,"")}.png" alt="${item.nombre}">
-            <h3>${item.nombre}</h3>
-            <div class="price">$${item.precio.toFixed(2)}</div>
-        `;
-        container.appendChild(div);
-    });
-
-    document.getElementById('total').innerText = `Total: $${total.toFixed(2)}`;
-}
-
-function mostrarFormulario() {
-    if(carrito.length === 0) {
-        alert("Tu carrito está vacío 💖");
-        return;
-    }
-    document.getElementById('formPago').style.display = 'block';
-    window.scrollTo({ top: document.getElementById('formPago').offsetTop - 20, behavior: 'smooth' });
-}
-
-function mostrarCampos() {
-    const tipo = document.getElementById('tipoCliente').value;
-    document.getElementById('camposEstudiante').style.display = tipo === 'estudiante' ? 'block' : 'none';
-    document.getElementById('camposCliente').style.display = tipo === 'cliente' ? 'block' : 'none';
-}
-
-function mostrarPagoEstudiante() {
-    const pago = document.getElementById('pagoEstudiante').value;
-    document.getElementById('camposPagoEstudiante').style.display = pago ? 'block' : 'none';
-    document.getElementById('direccionEstudiante').style.display = pago === 'presencial' ? 'block' : 'none';
-    document.getElementById('qrEstudiante').style.display = pago === 'online' ? 'block' : 'none';
-}
-
-function mostrarPagoCliente() {
-    const pago = document.getElementById('pagoCliente').value;
-    document.getElementById('camposPagoCliente').style.display = pago ? 'block' : 'none';
-    document.getElementById('direccionCliente').style.display = pago === 'presencial' ? 'block' : 'none';
-    document.getElementById('qrCliente').style.display = pago === 'online' ? 'block' : 'none';
-}
-
-function finalizarCompra() {
-    alert("¡Compra realizada con éxito! 💖");
-    localStorage.removeItem('carrito');
-    // redirige al index después de finalizar
-    window.location.href = 'index.html';
-}
-
-window.onload = cargarCarrito;
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Carrito | Bloom Beauty</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-    <style>
         body {
             margin:0;
             font-family:'Poppins', sans-serif;
-            background:#fff0f6; /* mismo fondo que portada */
+            background:#fff0f6; /* fondo rosadito pálido */
             color:#333;
         }
 
@@ -260,9 +42,7 @@ window.onload = cargarCarrito;
             font-size:14px;
         }
 
-        nav a:hover {
-            color:#f5a3c7;
-        }
+        nav a:hover { color:#f5a3c7; }
 
         .title {
             text-align:center;
@@ -274,7 +54,7 @@ window.onload = cargarCarrito;
         .cart-container {
             max-width:800px;
             margin:0 auto 60px;
-            background:white; /* panel blanco */
+            background:white;
             border-radius:18px;
             padding:30px;
             box-shadow:0 8px 20px rgba(0,0,0,0.06);
@@ -289,9 +69,7 @@ window.onload = cargarCarrito;
         }
 
         .cart-item:last-child { border-bottom:none; }
-
         .cart-item div { flex:1; }
-
         .cart-item h4 { margin:0; font-size:16px; }
         .cart-item span { color:#888; }
 
@@ -359,7 +137,7 @@ window.onload = cargarCarrito;
         <div id="cliente-fields" class="hidden">
             <input type="text" id="cliente-nombre" placeholder="Nombre completo">
             <input type="text" id="direccion" placeholder="Dirección">
-            <input type="text" id="correo-cliente" placeholder="Correo electrónico">
+            <input type="email" id="correo-cliente" placeholder="Correo electrónico">
         </div>
 
         <label>Forma de pago:</label>
