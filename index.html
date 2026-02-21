@@ -1,162 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Bloom Beauty ✨</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Bloom Beauty</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <!-- Fuentes aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
+    <style>
 
-body{
-    font-family:'Poppins', sans-serif;
-    background:#fff0f6;
-}
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            color: #333;
+        }
 
-/* HEADER */
-header{
-    background:white;
-    padding:18px 30px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    box-shadow:0 4px 10px rgba(0,0,0,0.05);
-    position:sticky;
-    top:0;
-}
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            border-bottom: 1px solid #f1f1f1;
+            background: white;
+            position: sticky;
+            top: 0;
+        }
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 600;
+        }
 
-.logo img{
-    width:40px;
-    border-radius:50%;
-}
+        /* CATEGORÍAS */
+        nav {
+            display: flex;
+            gap: 25px;
+        }
 
-.logo-text{
-    font-family:'Playfair Display', serif;
-    font-size:24px;
-    color:#b30059;
-}
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-/* HERO */
-.hero{
-    text-align:center;
-    padding:40px 20px;
-}
+        nav a:hover {
+            color: #f5a3c7;
+        }
 
-.hero h1{
-    font-family:'Playfair Display', serif;
-    color:#b30059;
-}
+        .cart {
+            font-size: 20px;
+            cursor: pointer;
+        }
 
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
-    padding:20px;
-    max-width:1100px;
-    margin:auto;
-}
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 90px 20px 70px;
+            background: linear-gradient(to bottom, #fff, #fff0f6);
+        }
 
-.card{
-    background:white;
-    border-radius:18px;
-    padding:15px;
-    text-align:center;
-    box-shadow:0 6px 15px rgba(0,0,0,0.08);
-}
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            margin-bottom: 10px;
+        }
 
-.card img{
-    width:100%;
-    border-radius:14px;
-}
+        .hero p {
+            font-size: 16px;
+            color: #777;
+        }
 
-button{
-    background:#ff85b3;
-    border:none;
-    padding:10px 18px;
-    border-radius:25px;
-    color:white;
-    cursor:pointer;
-    margin-top:10px;
-}
+        .sparkle {
+            color: #f5a3c7;
+        }
 
-button:hover{
-    background:#ff6fa5;
-}
+        /* BOTONES */
+        .buttons {
+            margin-top: 35px;
+        }
 
-/* BOTON CARRITO */
-.cart-button{
-    text-align:center;
-    padding:30px;
-}
+        .btn {
+            padding: 13px 32px;
+            border-radius: 30px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-.cart-button button{
-    background:#b30059;
-}
-</style>
+        .primary {
+            background: #f5a3c7;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #ec8fb8;
+        }
+
+        .secondary {
+            background: #f7f7f7;
+        }
+
+        .secondary:hover {
+            background: #ededed;
+        }
+
+        /* SECCIÓN */
+        .section {
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            color: #777;
+            max-width: 520px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+            border-top: 1px solid #f1f1f1;
+        }
+
+    </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">
-        <img src="img/logo.png">
-        <div class="logo-text">Bloom Beauty ✨</div>
+
+    <div class="logo">Bloom Beauty ✨</div>
+
+    <nav>
+        <a href="productos.html">Productos</a>
+        <a href="pagos.html">Formas de Pago</a>
+    </nav>
+
+    <div class="cart" onclick="location.href='carrito.html'">
+        🛒
     </div>
+
 </header>
 
 <section class="hero">
-    <h1>Productos disponibles 💄</h1>
+
+    <h1>Bienvenida <span class="sparkle">💖✨</span></h1>
+    <p>Tu espacio de belleza, brillo y estilo</p>
+
+    <div class="buttons">
+
+        <button class="btn primary" onclick="location.href='productos.html'">
+            Ver productos
+        </button>
+
+        <button class="btn secondary" onclick="location.href='carrito.html'">
+            Ver carrito
+        </button>
+
+    </div>
+
 </section>
 
-<div class="grid">
+<section class="section">
 
-    <div class="card">
-        <img src="img/WhatsApp Image 2026-01-30 at 01.12.50.jpeg">
-        <h3>Gloss</h3>
-        <p>$1.00</p>
-        <button onclick="agregar('Gloss',1)">Añadir</button>
-    </div>
+    <h2>Sobre Bloom Beauty</h2>
 
-    <div class="card">
-        <img src="img/WhatsApp Image 2026-01-30 at 01.18.34(1).jpeg">
-        <h3>Colágeno Labial</h3>
-        <p>$0.75</p>
-        <button onclick="agregar('Colágeno Labial',0.75)">Añadir</button>
-    </div>
+    <p>
+        Una tienda creada para resaltar tu belleza con productos seleccionados,
+        estética delicada y una experiencia elegante ✨
+    </p>
 
-    <div class="card">
-        <img src="img/WhatsApp Image 2026-01-30 at 13.14.10.jpeg">
-        <h3>Parches Acne</h3>
-        <p>$1.25</p>
-        <button onclick="agregar('Parches Acne',1.25)">Añadir</button>
-    </div>
+</section>
 
-</div>
-
-<div class="cart-button">
-    <button onclick="location.href='carrito.html'">
-        Ver carrito 🛒
-    </button>
-</div>
-
-<script>
-function agregar(nombre,precio){
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    carrito.push({nombre,precio});
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    window.location.href = "carrito.html"; // ← ABRE CARRITO AUTOMÁTICO
-}
-</script>
+<footer>
+    Bloom Beauty ✨
+</footer>
 
 </body>
 </html>
