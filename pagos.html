@@ -74,6 +74,19 @@
         button:hover {
             background: #ec8fb8;
         }
+
+        /* QR */
+        #qrTransferencia {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        #qrTransferencia img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -87,7 +100,7 @@
 
     <form id="formPago">
 
-        <!-- Preguntar si es estudiante o cliente -->
+        <!-- Tipo de cliente -->
         <label for="tipoCliente">¿Eres estudiante del Bernardo Valdivieso o cliente?</label>
         <select id="tipoCliente" required>
             <option value="" disabled selected>Selecciona tu tipo</option>
@@ -95,7 +108,7 @@
             <option value="cliente">Cliente</option>
         </select>
 
-        <!-- Campos dinámicos para ESTUDIANTE -->
+        <!-- CAMPOS PARA ESTUDIANTE -->
         <div id="camposEstudiante" style="display:none;">
             <label for="nombreEstudiante">Nombre completo</label>
             <input type="text" id="nombreEstudiante" placeholder="Tu nombre completo">
@@ -114,7 +127,7 @@
             </select>
         </div>
 
-        <!-- Campos dinámicos para CLIENTE -->
+        <!-- CAMPOS PARA CLIENTE -->
         <div id="camposCliente" style="display:none;">
             <label for="nombreCliente">Nombre completo</label>
             <input type="text" id="nombreCliente" placeholder="Tu nombre completo">
@@ -126,7 +139,7 @@
                 <option value="transferencia">Transferencia</option>
             </select>
 
-            <!-- Solo mostrar si el cliente elige presencial -->
+            <!-- DIRECCIÓN SOLO PARA CLIENTE PRESENCIAL -->
             <div id="direccionCliente" style="display:none;">
                 <label for="direccion">Dirección</label>
                 <input type="text" id="direccion" placeholder="Tu dirección">
@@ -136,6 +149,17 @@
             </div>
         </div>
 
+        <!-- QR para transferencia -->
+        <div id="qrTransferencia">
+            <p>Escanea el QR para transferir 💖</p>
+            <img src="img/qr.png" alt="QR de Transferencia">
+            <p>Luego sube tu comprobante en el formulario ✨</p>
+        </div>
+
+        <!-- Subir comprobante -->
+        <label for="comprobante">Subir comprobante (opcional si es presencial)</label>
+        <input type="file" id="comprobante" accept="image/*,application/pdf">
+
         <button type="submit">Finalizar Pago</button>
     </form>
 </div>
@@ -144,28 +168,45 @@
     const tipoCliente = document.getElementById('tipoCliente');
     const camposEstudiante = document.getElementById('camposEstudiante');
     const camposCliente = document.getElementById('camposCliente');
+    const metodoEstudiante = document.getElementById('metodoEstudiante');
     const metodoCliente = document.getElementById('metodoCliente');
     const direccionCliente = document.getElementById('direccionCliente');
+    const qr = document.getElementById('qrTransferencia');
 
+    // Mostrar campos según tipo de cliente
     tipoCliente.addEventListener('change', () => {
         if(tipoCliente.value === 'estudiante') {
             camposEstudiante.style.display = 'block';
             camposCliente.style.display = 'none';
+            qr.style.display = 'none';
             direccionCliente.style.display = 'none';
         } else {
             camposEstudiante.style.display = 'none';
             camposCliente.style.display = 'block';
+            qr.style.display = 'none';
             direccionCliente.style.display = 'none';
         }
     });
 
-    metodoCliente.addEventListener('change', () => {
-        if(metodoCliente.value === 'presencial') {
-            direccionCliente.style.display = 'block';
+    // Mostrar QR si se elige transferencia
+    function mostrarQR(metodo) {
+        if(metodo.value === 'transferencia') {
+            qr.style.display = 'block';
         } else {
-            direccionCliente.style.display = 'none';
+            qr.style.display = 'none';
         }
-    });
+    }
+
+    if(metodoEstudiante) {
+        metodoEstudiante.addEventListener('change', () => mostrarQR(metodoEstudiante));
+    }
+
+    if(metodoCliente) {
+        metodoCliente.addEventListener('change', () => {
+            mostrarQR(metodoCliente);
+            direccionCliente.style.display = metodoCliente.value === 'presencial' ? 'block' : 'none';
+        });
+    }
 
     // Evitar envío real para pruebas
     const form = document.getElementById('formPago');
