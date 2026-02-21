@@ -44,19 +44,19 @@
         .nav button{
             background:none;
             border:none;
-            font-size:20px;
+            font-size:22px;
             cursor:pointer;
         }
 
-        /* HERO / INTRO */
+        /* HERO */
         .hero{
             text-align:center;
-            padding:80px 20px 40px;
+            padding:70px 20px 30px;
         }
 
         .hero h1{
             font-family:'Playfair Display', serif;
-            font-size:42px;
+            font-size:40px;
             color:#b30059;
         }
 
@@ -67,7 +67,7 @@
 
         /* PRODUCTOS */
         .productos{
-            padding:30px 20px 60px;
+            padding:20px;
             max-width:1100px;
             margin:auto;
         }
@@ -180,11 +180,11 @@
     <div id="total"></div>
 
     <button class="pay-btn" onclick="location.href='checkout.html'">
-        Continuar pedido 💖
+        Realizar pedido 💖
     </button>
 </div>
 
-<!-- INTRO BONITA -->
+<!-- INTRO -->
 <section class="hero">
     <h1>Bienvenida ✨💖✨</h1>
     <p>Tu espacio de belleza, brillo y estilo</p>
@@ -197,24 +197,45 @@
     <div class="grid">
 
         <div class="card">
-            <img src="img/gloss.jpeg">
+            <img src="img/WhatsApp Image 2026-01-30 at 01.12.50.jpeg">
             <h3>Gloss</h3>
             <p>$1.00</p>
             <button onclick="agregar('Gloss',1)">Añadir</button>
         </div>
 
         <div class="card">
-            <img src="img/colageno.jpeg">
+            <img src="img/WhatsApp Image 2026-01-30 at 01.18.34(1).jpeg">
             <h3>Colágeno Labial</h3>
             <p>$0.75</p>
-            <button onclick="agregar('Colágeno',0.75)">Añadir</button>
+            <button onclick="agregar('Colágeno Labial',0.75)">Añadir</button>
         </div>
 
         <div class="card">
-            <img src="img/parches.jpeg">
+            <img src="img/WhatsApp Image 2026-01-30 at 13.14.10.jpeg">
             <h3>Parches Acne</h3>
             <p>$1.25</p>
-            <button onclick="agregar('Parches',1.25)">Añadir</button>
+            <button onclick="agregar('Parches Acne',1.25)">Añadir</button>
+        </div>
+
+        <div class="card">
+            <img src="img/WhatsApp Image 2026-01-30 at 13.14.19.jpeg">
+            <h3>Delineadores Labios</h3>
+            <p>$1.25</p>
+            <button onclick="agregar('Delineador Labial',1.25)">Añadir</button>
+        </div>
+
+        <div class="card">
+            <img src="img/WhatsApp Image 2026-01-30 at 13.14.32.jpeg">
+            <h3>Bálsamo con Color</h3>
+            <p>$1.00</p>
+            <button onclick="agregar('Bálsamo con Color',1)">Añadir</button>
+        </div>
+
+        <div class="card">
+            <img src="img/WhatsApp Image 2026-01-30 at 13.14.49.jpeg">
+            <h3>Primer</h3>
+            <p>$0.75</p>
+            <button onclick="agregar('Primer',0.75)">Añadir</button>
         </div>
 
     </div>
@@ -248,7 +269,7 @@ function cargarCarrito(){
 
     carrito.forEach(p => {
         total += p.precio;
-        lista.innerHTML += `<li>${p.nombre} - $${p.precio}</li>`;
+        lista.innerHTML += `<li>${p.nombre} - $${p.precio.toFixed(2)}</li>`;
     });
 
     document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
@@ -258,3 +279,4 @@ function cargarCarrito(){
 
 </body>
 </html>
+
