@@ -1,74 +1,193 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Productos | Bloom Beauty</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Bloom Beauty</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Fuente aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-<style>
+    <style>
 
-body{
-    font-family:'Poppins';
-    background:#fff0f6;
-    padding:30px;
-}
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            color: #333;
+        }
 
-.card{
-    background:white;
-    border-radius:18px;
-    padding:15px;
-    margin-bottom:20px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.08);
-}
+        /* HEADER BONITO */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 40px;
+            border-bottom: 1px solid #f1f1f1;
+            background: white;
+            position: sticky;
+            top: 0;
+        }
 
-button{
-    background:#ff85b3;
-    border:none;
-    padding:10px 18px;
-    border-radius:25px;
-    color:white;
-    cursor:pointer;
-    margin-top:10px;
-}
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
 
-.realizar{
-    width:100%;
-    margin-top:25px;
-    padding:14px;
-    font-size:16px;
-}
+        nav {
+            display: flex;
+            gap: 25px;
+        }
 
-</style>
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #f5a3c7;
+        }
+
+        .cart {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* TÍTULO */
+        .title {
+            text-align: center;
+            padding: 50px 20px 20px;
+        }
+
+        .title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+        }
+
+        /* PRODUCTOS */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            padding: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 14px;
+        }
+
+        .card h3 {
+            margin: 12px 0 5px;
+            font-size: 16px;
+        }
+
+        .price {
+            color: #888;
+            font-size: 14px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 22px;
+            border-radius: 25px;
+            border: none;
+            background: #f5a3c7; /* MISMO ROSADO PASTEL */
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ec8fb8;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+            border-top: 1px solid #f1f1f1;
+        }
+
+    </style>
 </head>
 
 <body>
 
-<h2>Productos disponibles ✨</h2>
+<header>
 
-<div class="card">
-    <h3>Gloss</h3>
-    <p>$1.00</p>
-    <button onclick="agregar('Gloss',1)">Añadir</button>
+    <div class="logo">Bloom Beauty ✨</div>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="pagos.html">Formas de Pago</a>
+    </nav>
+
+    <div class="cart" onclick="location.href='carrito.html'">
+        🛒
+    </div>
+
+</header>
+
+<div class="title">
+    <h1>Nuestros Productos ✨</h1>
 </div>
 
-<div class="card">
-    <h3>Colágeno Labial</h3>
-    <p>$0.75</p>
-    <button onclick="agregar('Colágeno',0.75)">Añadir</button>
+<div class="container">
+
+    <!-- TUS PRODUCTOS EXACTOS -->
+
+    <div class="card">
+        <img src="img/gloss.jpeg">
+        <h3>Gloss</h3>
+        <div class="price">$1.00</div>
+        <button onclick="agregar('Gloss', 1)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/rubor.jpeg">
+        <h3>Rubor</h3>
+        <div class="price">$2.00</div>
+        <button onclick="agregar('Rubor', 2)">Añadir</button>
+    </div>
+
 </div>
 
-<button class="realizar" onclick="location.href='index.html'; toggleCart();">
-    Realizar pedido ✨
-</button>
+<footer>
+    Bloom Beauty ✨
+</footer>
 
 <script>
 
-function agregar(nombre,precio){
+function agregar(nombre, precio) {
+
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push({nombre,precio});
+
+    carrito.push({nombre, precio});
+
     localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    alert("Producto añadido al carrito 💖");
 }
 
 </script>
