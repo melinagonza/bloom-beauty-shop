@@ -384,4 +384,137 @@ footer{
 </footer>
 
 </body>
-</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pagos | Bloom Beauty ✨</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#fff0f6;
+}
+
+header{
+    background:#ff4da6;
+    padding:18px;
+    text-align:center;
+    color:white;
+    font-family:'Playfair Display', serif;
+    font-size:24px;
+}
+
+.container{
+    background:white;
+    max-width:500px;
+    margin:30px auto;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+h2{
+    text-align:center;
+    font-family:'Playfair Display', serif;
+    color:#b30059;
+}
+
+select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:10px;
+    border:1px solid #ddd;
+}
+
+.qr{
+    text-align:center;
+    margin-top:20px;
+    display:none;
+}
+
+.qr img{
+    width:180px;
+    border-radius:12px;
+}
+
+button{
+    background:#ff1493;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:25px;
+    cursor:pointer;
+    width:100%;
+    margin-top:20px;
+}
+
+button:hover{
+    background:#e60073;
+}
+
+.volver{
+    text-align:center;
+    margin-top:15px;
+}
+
+.volver a{
+    text-decoration:none;
+    color:#b30059;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>Formas de Pago 💵</header>
+
+<div class="container">
+
+    <h2>Selecciona tu método ✨</h2>
+
+    <label>¿Cómo deseas pagar?</label>
+    <select id="metodoPago" onchange="mostrarQR()">
+        <option value="">Seleccionar</option>
+        <option value="presencial">Pago presencial</option>
+        <option value="online">Pago online</option>
+    </select>
+
+    <div class="qr" id="qrBox">
+        <p>Escanea para pagar ✨</p>
+        <img src="img/qr.png">
+    </div>
+
+    <button>Finalizar pedido 💖</button>
+
+    <div class="volver">
+        <a href="index.html">⬅ Volver</a>
+    </div>
+
+</div>
+
+<script>
+
+function mostrarQR(){
+    const metodo = document.getElementById("metodoPago").value;
+    const qr = document.getElementById("qrBox");
+
+    if(metodo === "online"){
+        qr.style.display = "block";
+    } else {
+        qr.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</htm
