@@ -8,8 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
     <style>
-        body { margin:0; font-family:'Poppins', sans-serif; background:#fff; color:#333; }
-        header { display:flex; align-items:center; justify-content:space-between; padding:18px 40px; border-bottom:1px solid #f1f1f1; background:white; }
+        body { 
+            margin:0; 
+            font-family:'Poppins', sans-serif; 
+            background:#fff0f6; /* rosa pálido */ 
+            color:#333; 
+        }
+        header { 
+            display:flex; 
+            align-items:center; 
+            justify-content:space-between; 
+            padding:18px 40px; 
+            border-bottom:1px solid #f1f1f1; 
+            background:white; 
+        }
         .logo { font-family:'Playfair Display', serif; font-size:26px; font-weight:600; }
         nav { display:flex; gap:20px; }
         nav a { text-decoration:none; color:#555; font-weight:500; font-size:14px; }
@@ -148,12 +160,12 @@ function cargarCarrito() {
     container.innerHTML = '';
     let total = 0;
 
-    carrito.forEach((item, index) => {
+    carrito.forEach((item) => {
         total += item.precio;
         const div = document.createElement('div');
         div.className = 'card';
         div.innerHTML = `
-            <img src="img/${item.nombre.toLowerCase().replace(/ /g,'').replace(/á/g,'a').replace(/í/g,'i').replace(/é/g,'e').replace(/ó/g,'o').replace(/ú/g,'u')}.png" alt="${item.nombre}">
+            <img src="img/${item.nombre.toLowerCase().replace(/ /g,'').normalize('NFD').replace(/[\u0300-\u036f]/g,"")}.png" alt="${item.nombre}">
             <h3>${item.nombre}</h3>
             <div class="price">$${item.precio.toFixed(2)}</div>
         `;
@@ -169,6 +181,7 @@ function mostrarFormulario() {
         return;
     }
     document.getElementById('formPago').style.display = 'block';
+    window.scrollTo({ top: document.getElementById('formPago').offsetTop - 20, behavior: 'smooth' });
 }
 
 function mostrarCampos() {
@@ -194,6 +207,7 @@ function mostrarPagoCliente() {
 function finalizarCompra() {
     alert("¡Compra realizada con éxito! 💖");
     localStorage.removeItem('carrito');
+    // redirige al index después de finalizar
     window.location.href = 'index.html';
 }
 
