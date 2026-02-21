@@ -1,144 +1,103 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Productos | Bloom Beauty</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-    <style>
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #fff;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 40px;
-            border-bottom: 1px solid #f1f1f1;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-area img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-        }
-
-        .cart {
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .title {
-            text-align: center;
-            padding: 40px;
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            padding: 40px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .card {
-            background: white;
-            border-radius: 18px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 14px;
-        }
-
-        .price {
-            color: #888;
-            margin: 5px 0;
-        }
-
-        button {
-            margin-top: 10px;
-            padding: 10px 22px;
-            border-radius: 25px;
-            border: none;
-            background: #f5a3c7;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #ec8fb8;
-        }
-
-    </style>
-</head>
-
-<body>
-
-<header>
-    <div class="logo-area">
-        <img src="img/logo.png">
-        <div class="logo">Bloom Beauty ✨</div>
-    </div>
-
-    <div class="cart" onclick="location.href='carrito.html'">
-        🛒
-    </div>
-</header>
-
-<div class="title">
-    Nuestros Productos ✨
-</div>
-
 <div class="container">
 
+    <!-- Productos existentes -->
     <div class="card">
-        <img src="img/gloss.jpeg">
+        <img src="img/gloss.jpeg" alt="Gloss">
         <h3>Gloss</h3>
         <div class="price">$1.00</div>
         <button onclick="agregar('Gloss', 1)">Añadir</button>
     </div>
 
     <div class="card">
-        <img src="img/rubor.jpeg">
+        <img src="img/rubor.jpeg" alt="Rubor">
         <h3>Rubor</h3>
         <div class="price">$2.00</div>
         <button onclick="agregar('Rubor', 2)">Añadir</button>
     </div>
 
+    <!-- NUEVOS PRODUCTOS -->
+    <div class="card">
+        <img src="img/blush3en1.png" alt="Blush / Highlights / Eyeshadow">
+        <h3>Blush / Highlights / Eyeshadow</h3>
+        <div class="price">$1.25</div>
+        <button onclick="agregar('Blush 3 en 1', 1.25)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/delineadordelabios.png" alt="Delineador de Labios">
+        <h3>Delineador de Labios</h3>
+        <div class="price">$1.00</div>
+        <button onclick="agregar('Delineador de Labios', 1)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/dupdior.png" alt="Dup Dior">
+        <h3>Dup Dior</h3>
+        <div class="price">$1.00</div>
+        <button onclick="agregar('Dup Dior', 1)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/dupdiorrosa.png" alt="Dup Dior Rosa">
+        <h3>Dup Dior Rosa</h3>
+        <div class="price">$1.00</div>
+        <button onclick="agregar('Dup Dior Rosa', 1)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/fresitadoble.png" alt="Fresita Doble">
+        <h3>Fresita Doble</h3>
+        <div class="price">$0.75</div>
+        <button onclick="agregar('Fresita Doble', 0.75)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/glossconcolor.png" alt="Gloss con Color">
+        <h3>Gloss con Color</h3>
+        <div class="price">$1.00</div>
+        <button onclick="agregar('Gloss con Color', 1)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/mascarillas.png" alt="Mascarillas">
+        <h3>Mascarillas</h3>
+        <div class="price">$0.50</div>
+        <button onclick="agregar('Mascarillas', 0.50)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/parchesparalosojos.png" alt="Parches para los Ojos">
+        <h3>Parches para los Ojos</h3>
+        <div class="price">$0.50</div>
+        <button onclick="agregar('Parches para los Ojos', 0.50)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/pirmer.png" alt="Primer">
+        <h3>Primer</h3>
+        <div class="price">$1.25</div>
+        <button onclick="agregar('Primer', 1.25)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/serumdepestañas.png" alt="Serum de Pestañas">
+        <h3>Serum de Pestañas</h3>
+        <div class="price">$3.00</div>
+        <button onclick="agregar('Serum de Pestañas', 3)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/sponjas.png" alt="Beauty Blender">
+        <h3>Beauty Blender</h3>
+        <div class="price">$0.50</div>
+        <button onclick="agregar('Beauty Blender', 0.50)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/tintadelabios.png" alt="Tinta de Labios">
+        <h3>Tinta de Labios</h3>
+        <div class="price">$1.00</div>
+        <button onclick="agregar('Tinta de Labios', 1)">Añadir</button>
+    </div>
+
 </div>
-
-<script>
-function agregar(nombre, precio) {
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push({nombre, precio});
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert("Producto añadido 💖");
-}
-</script>
-
-</body>
-</html>
