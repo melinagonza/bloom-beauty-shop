@@ -1,201 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Bloom Beauty ✨</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Pago | Bloom Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tipografías bonitas -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
 
-    <style>
+<style>
+body{
+    font-family:'Poppins';
+    background:#fff0f6;
+    padding:30px;
+}
 
-        body{
-            margin:0;
-            font-family:'Poppins', sans-serif;
-            background:#fff0f6;
-            color:#333;
-        }
+h1{
+    text-align:center;
+    font-family:'Playfair Display';
+    color:#b30059;
+}
 
-        /* HEADER */
-        header{
-            background:white;
-            padding:18px 40px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            box-shadow:0 4px 10px rgba(0,0,0,0.05);
-            position:sticky;
-            top:0;
-        }
+form{
+    background:white;
+    max-width:500px;
+    margin:auto;
+    padding:25px;
+    border-radius:20px;
+}
 
-        .logo{
-            font-family:'Playfair Display', serif;
-            font-size:26px;
-            font-weight:600;
-        }
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+}
 
-        nav a{
-            text-decoration:none;
-            margin-left:25px;
-            color:#555;
-            font-size:14px;
-            font-weight:500;
-        }
+button{
+    margin-top:15px;
+    width:100%;
+    padding:12px;
+    background:#ff85b3;
+    border:none;
+    border-radius:25px;
+    color:white;
+    cursor:pointer;
+}
 
-        nav a:hover{
-            color:#ff4d8d;
-        }
-
-        /* HERO */
-        .hero{
-            text-align:center;
-            padding:80px 20px 60px;
-        }
-
-        .hero h1{
-            font-family:'Playfair Display', serif;
-            font-size:42px;
-            margin-bottom:10px;
-            color:#b30059;
-        }
-
-        .hero p{
-            color:#777;
-            font-size:16px;
-        }
-
-        .heart{
-            color:#ff4d8d;
-        }
-
-        /* BOTONES */
-        .buttons{
-            margin-top:35px;
-        }
-
-        .btn{
-            padding:13px 30px;
-            border-radius:30px;
-            border:none;
-            margin:10px;
-            cursor:pointer;
-            font-size:14px;
-            font-weight:500;
-            transition:0.3s;
-        }
-
-        .primary{
-            background:#ff4d8d;
-            color:white;
-        }
-
-        .primary:hover{
-            background:#e63c78;
-            transform:translateY(-2px);
-        }
-
-        .secondary{
-            background:white;
-            border:1px solid #ffd1e6;
-        }
-
-        .secondary:hover{
-            background:#fff0f6;
-        }
-
-        /* PRODUCTOS DESTACADOS */
-        .products{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-            gap:25px;
-            padding:40px;
-            max-width:1000px;
-            margin:auto;
-        }
-
-        .card{
-            background:white;
-            padding:18px;
-            border-radius:18px;
-            text-align:center;
-            box-shadow:0 6px 15px rgba(0,0,0,0.06);
-            transition:0.3s;
-        }
-
-        .card:hover{
-            transform:translateY(-5px);
-        }
-
-        .card img{
-            width:100%;
-            border-radius:14px;
-        }
-
-        .price{
-            color:#ff4d8d;
-            font-weight:600;
-        }
-
-        /* FOOTER */
-        footer{
-            margin-top:40px;
-            padding:25px;
-            text-align:center;
-            font-size:13px;
-            color:#999;
-        }
-
-    </style>
+.qr{
+    text-align:center;
+    margin-top:15px;
+    display:none;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">Bloom Beauty ✨</div>
+<h1>Bloom Beauty ✨</h1>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="checkout.html">Carrito</a>
-        <a href="pagos.html">Pagos</a>
-    </nav>
-</header>
+<form action="https://formsubmit.co/TUCORREO@gmail.com" method="POST">
 
-<section class="hero">
-    <h1>Bienvenida <span class="heart">❤</span></h1>
-    <p>Tu espacio de belleza, brillo y estilo ✨</p>
+    <input type="text" name="Nombre" placeholder="Nombre completo" required>
 
-    <div class="buttons">
-        <button class="btn primary" onclick="location.href='productos.html'">
-            Ver productos
-        </button>
+    <select name="MetodoPago" onchange="mostrarQR(this.value)">
+        <option>Pago Presencial</option>
+        <option>Pago Online</option>
+    </select>
 
-        <button class="btn secondary" onclick="location.href='checkout.html'">
-            Ver carrito
-        </button>
-    </div>
-</section>
-
-<section class="products">
-
-    <div class="card">
-        <img src="img/gloss.jpeg">
-        <h3>Gloss</h3>
-        <p class="price">$1.00</p>
+    <div class="qr" id="qrBox">
+        <p>Escanea el QR 💖</p>
+        <img src="img/qr.png" width="200">
+        <input type="file" name="Comprobante">
     </div>
 
-    <div class="card">
-        <img src="img/rubor.jpeg">
-        <h3>Rubor</h3>
-        <p class="price">$2.00</p>
-    </div>
+    <button type="submit">Enviar pedido ✨</button>
 
-</section>
+</form>
 
-<footer>
-    Bloom Beauty ✨ | Todos los derechos reservados 💖
-</footer>
+<script>
+function mostrarQR(valor){
+    document.getElementById("qrBox").style.display =
+        valor === "Pago Online" ? "block" : "none";
+}
+</script>
 
 </body>
 </html>
