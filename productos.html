@@ -1,224 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Productos | Bloom Beauty</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Fuentes bonitas -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-    <style>
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #fff;
-            color: #333;
-        }
-
-        /* HEADER BONITO */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 40px;
-            border-bottom: 1px solid #f1f1f1;
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-area img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #555;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #f5a3c7;
-        }
-
-        .cart {
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 90px 20px 70px;
-            background: linear-gradient(180deg, #fff, #fff0f6);
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 46px;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            color: #777;
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
-
-        /* BRILLITOS */
-        .sparkles {
-            color: #f5a3c7;
-        }
-
-        /* BOTONES */
-        button {
-            padding: 12px 28px;
-            border-radius: 30px;
-            border: none;
-            margin: 10px 5px 0 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .primary {
-            background: #f5a3c7;
-            color: white;
-        }
-
-        .primary:hover {
-            background: #ec8fb8;
-        }
-
-        .secondary {
-            background: #f7f7f7;
-        }
-
-        .secondary:hover {
-            background: #ededed;
-        }
-
-        /* SECCIÓN DE PRODUCTOS */
-        .title {
-            text-align: center;
-            padding: 40px;
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            padding: 40px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .card {
-            background: white;
-            border-radius: 18px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 14px;
-        }
-
-        .card h3 {
-            margin: 12px 0 5px;
-            font-size: 16px;
-        }
-
-        .price {
-            color: #888;
-            margin: 5px 0;
-        }
-
-        footer {
-            padding: 30px;
-            text-align: center;
-            font-size: 13px;
-            color: #999;
-            border-top: 1px solid #f1f1f1;
-        }
-
-    </style>
-</head>
-
-<body>
-
-<header>
-
-    <div class="logo-area">
-        <img src="img/logo.png">
-        <div class="logo">Bloom Beauty ✨</div>
-    </div>
-
-    <nav>
-        <a href="productos.html">Productos</a>
-        <a href="pagos.html">Pagos</a>
-    </nav>
-
-    <div class="cart" onclick="location.href='carrito.html'">
-        🛒
-    </div>
-
-</header>
-
-<section class="hero">
-    <h1>
-        <span class="sparkles">✨</span> 
-        Nuestros Productos 
-        <span class="sparkles">✨</span>
-    </h1>
-    <p>Elige tus favoritos y agrégalos al carrito 💖</p>
-</section>
-
-<div class="title">Catálogo de Bloom Beauty</div>
-
 <div class="container">
 
-    <!-- TARJETAS DE PRODUCTOS -->
+    <!-- LABIALES Y GLOSSES -->
     <div class="card">
         <img src="img/gloss.png" alt="Gloss">
         <h3>Gloss</h3>
         <div class="price">$1.00</div>
         <button class="primary" onclick="agregar('Gloss', 1)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/glossconcolor.png" alt="Gloss con Color">
+        <h3>Gloss con Color</h3>
+        <div class="price">$1.00</div>
+        <button class="primary" onclick="agregar('Gloss con Color', 1)">Añadir</button>
+    </div>
+
+    <div class="card">
+        <img src="img/tintadelabios.png" alt="Tinta de Labios">
+        <h3>Tinta de Labios</h3>
+        <div class="price">$1.00</div>
+        <button class="primary" onclick="agregar('Tinta de Labios', 1)">Añadir</button>
     </div>
 
     <div class="card">
@@ -228,6 +29,7 @@
         <button class="primary" onclick="agregar('Delineador de Labios', 1)">Añadir</button>
     </div>
 
+    <!-- BLUSH / SOMBRAS -->
     <div class="card">
         <img src="img/blush3en1.png" alt="Blush / Highlights / Eyeshadow">
         <h3>Blush / Highlights / Eyeshadow</h3>
@@ -235,6 +37,7 @@
         <button class="primary" onclick="agregar('Blush 3 en 1', 1.25)">Añadir</button>
     </div>
 
+    <!-- DUP DIOR -->
     <div class="card">
         <img src="img/dupdior.png" alt="Dup Dior">
         <h3>Dup Dior</h3>
@@ -249,20 +52,7 @@
         <button class="primary" onclick="agregar('Dup Dior Rosa', 1)">Añadir</button>
     </div>
 
-    <div class="card">
-        <img src="img/fresitadoble.png" alt="Fresita Doble">
-        <h3>Fresita Doble</h3>
-        <div class="price">$0.75</div>
-        <button class="primary" onclick="agregar('Fresita Doble', 0.75)">Añadir</button>
-    </div>
-
-    <div class="card">
-        <img src="img/glossconcolor.png" alt="Gloss con Color">
-        <h3>Gloss con Color</h3>
-        <div class="price">$1.00</div>
-        <button class="primary" onclick="agregar('Gloss con Color', 1)">Añadir</button>
-    </div>
-
+    <!-- CUIDADO FACIAL -->
     <div class="card">
         <img src="img/mascarillas.png" alt="Mascarillas">
         <h3>Mascarillas</h3>
@@ -291,6 +81,7 @@
         <button class="primary" onclick="agregar('Serum de Pestañas', 3)">Añadir</button>
     </div>
 
+    <!-- HERRAMIENTAS DE MAQUILLAJE -->
     <div class="card">
         <img src="img/sponjas.png" alt="Beauty Blender">
         <h3>Beauty Blender</h3>
@@ -299,26 +90,10 @@
     </div>
 
     <div class="card">
-        <img src="img/tintadelabios.png" alt="Tinta de Labios">
-        <h3>Tinta de Labios</h3>
-        <div class="price">$1.00</div>
-        <button class="primary" onclick="agregar('Tinta de Labios', 1)">Añadir</button>
+        <img src="img/fresitadoble.png" alt="Fresita Doble">
+        <h3>Fresita Doble</h3>
+        <div class="price">$0.75</div>
+        <button class="primary" onclick="agregar('Fresita Doble', 0.75)">Añadir</button>
     </div>
 
 </div>
-
-<footer>
-    Bloom Beauty ✨
-</footer>
-
-<script>
-function agregar(nombre, precio) {
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push({nombre, precio});
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert("Producto añadido 💖");
-}
-</script>
-
-</body>
-</html>
