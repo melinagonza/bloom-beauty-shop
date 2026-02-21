@@ -2,22 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Bloom Beauty</title>
+    <title>Pagos | Bloom Beauty</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fuentes bonitas -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
     <style>
-
         body {
-            margin: 0;
             font-family: 'Poppins', sans-serif;
+            margin: 0;
             background: #fff;
             color: #333;
         }
 
-        /* HEADER BONITO */
         header {
             display: flex;
             align-items: center;
@@ -25,187 +22,199 @@
             padding: 18px 40px;
             border-bottom: 1px solid #f1f1f1;
             background: white;
-            position: sticky;
-            top: 0;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-area img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 26px;
             font-weight: 600;
-            letter-spacing: 1px;
         }
 
-        nav {
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        form {
             display: flex;
-            gap: 25px;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #555;
-            font-size: 14px;
+        label {
             font-weight: 500;
         }
 
-        nav a:hover {
-            color: #f5a3c7;
-        }
-
-        .cart {
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 90px 20px 70px;
-            background: linear-gradient(180deg, #fff, #fff0f6);
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 46px;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            color: #777;
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
-
-        /* BRILLITOS */
-        .sparkles {
-            color: #f5a3c7;
-        }
-
-        /* BOTONES */
-        .buttons {
-            margin-top: 20px;
+        input, select {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            width: 100%;
         }
 
         button {
-            padding: 12px 28px;
+            padding: 12px;
             border-radius: 30px;
             border: none;
-            margin: 10px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .primary {
             background: #f5a3c7;
             color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
-        .primary:hover {
+        button:hover {
             background: #ec8fb8;
         }
 
-        .secondary {
-            background: #f7f7f7;
-        }
-
-        .secondary:hover {
-            background: #ededed;
-        }
-
-        /* SECCIÓN */
-        .section {
-            padding: 70px 20px;
+        /* QR */
+        #qrTransferencia {
+            display: none;
             text-align: center;
+            margin-top: 15px;
         }
 
-        .section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
+        #qrTransferencia img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
         }
-
-        .section p {
-            color: #777;
-            max-width: 500px;
-            margin: auto;
-        }
-
-        footer {
-            padding: 30px;
-            text-align: center;
-            font-size: 13px;
-            color: #999;
-            border-top: 1px solid #f1f1f1;
-        }
-
     </style>
 </head>
-
 <body>
 
 <header>
-
-    <div class="logo-area">
-        <!-- TU LOGO -->
-        <img src="img/logo.png">
-        <div class="logo">Bloom Beauty ✨</div>
-    </div>
-
-    <nav>
-        <a href="productos.html">Productos</a>
-        <a href="pagos.html">Pagos</a>
-    </nav>
-
-    <div class="cart" onclick="location.href='carrito.html'">
-        🛒
-    </div>
-
+    <div class="logo">Bloom Beauty ✨</div>
 </header>
 
-<section class="hero">
-    <h1>
-        <span class="sparkles">✨</span> 
-        Bienvenida 
-        <span class="sparkles">✨</span>
-    </h1>
+<div class="container">
+    <h2>Formulario de Pago</h2>
 
-    <p>Tu espacio de belleza, brillo y estilo</p>
+    <form id="formPago">
 
-    <div class="buttons">
-        <button class="primary" onclick="location.href='productos.html'">
-            Ver productos
-        </button>
+        <!-- Tipo de cliente -->
+        <label for="tipoCliente">¿Eres estudiante del Bernardo Valdivieso o cliente?</label>
+        <select id="tipoCliente" required>
+            <option value="" disabled selected>Selecciona tu tipo</option>
+            <option value="estudiante">Estudiante</option>
+            <option value="cliente">Cliente</option>
+        </select>
 
-        <button class="secondary" onclick="location.href='pagos.html'">
-            Formas de pago
-        </button>
-    </div>
-</section>
+        <!-- CAMPOS PARA ESTUDIANTE -->
+        <div id="camposEstudiante" style="display:none;">
+            <label for="nombreEstudiante">Nombre completo</label>
+            <input type="text" id="nombreEstudiante" placeholder="Tu nombre completo">
 
-<section class="section">
-    <h2>Sobre Bloom Beauty</h2>
-    <p>
-        Una tienda creada para resaltar tu belleza con productos seleccionados,
-        estética delicada y una experiencia elegante ✨
-    </p>
-</section>
+            <label for="curso">Curso</label>
+            <input type="text" id="curso" placeholder="Ej: 10">
 
-<footer>
-    Bloom Beauty ✨
-</footer>
+            <label for="paralelo">Paralelo</label>
+            <input type="text" id="paralelo" placeholder="Ej: A">
+
+            <label for="metodoEstudiante">Forma de pago</label>
+            <select id="metodoEstudiante">
+                <option value="" disabled selected>Selecciona el método</option>
+                <option value="presencial">Presencial</option>
+                <option value="transferencia">Transferencia</option>
+            </select>
+        </div>
+
+        <!-- CAMPOS PARA CLIENTE -->
+        <div id="camposCliente" style="display:none;">
+            <label for="nombreCliente">Nombre completo</label>
+            <input type="text" id="nombreCliente" placeholder="Tu nombre completo">
+
+            <label for="metodoCliente">Forma de pago</label>
+            <select id="metodoCliente">
+                <option value="" disabled selected>Selecciona el método</option>
+                <option value="presencial">Presencial</option>
+                <option value="transferencia">Transferencia</option>
+            </select>
+
+            <!-- DIRECCIÓN SOLO PARA CLIENTE PRESENCIAL -->
+            <div id="direccionCliente" style="display:none;">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" placeholder="Tu dirección">
+
+                <label for="numeroCasa">Número de casa</label>
+                <input type="text" id="numeroCasa" placeholder="Número de casa">
+            </div>
+        </div>
+
+        <!-- QR para transferencia -->
+        <div id="qrTransferencia">
+            <p>Escanea el QR para transferir 💖</p>
+            <img src="img/qr.png" alt="QR de Transferencia">
+            <p>Luego sube tu comprobante en el formulario ✨</p>
+        </div>
+
+        <!-- Subir comprobante -->
+        <label for="comprobante">Subir comprobante (opcional si es presencial)</label>
+        <input type="file" id="comprobante" accept="image/*,application/pdf">
+
+        <button type="submit">Finalizar Pago</button>
+    </form>
+</div>
+
+<script>
+    const tipoCliente = document.getElementById('tipoCliente');
+    const camposEstudiante = document.getElementById('camposEstudiante');
+    const camposCliente = document.getElementById('camposCliente');
+    const metodoEstudiante = document.getElementById('metodoEstudiante');
+    const metodoCliente = document.getElementById('metodoCliente');
+    const direccionCliente = document.getElementById('direccionCliente');
+    const qr = document.getElementById('qrTransferencia');
+
+    // Mostrar campos según tipo de cliente
+    tipoCliente.addEventListener('change', () => {
+        if(tipoCliente.value === 'estudiante') {
+            camposEstudiante.style.display = 'block';
+            camposCliente.style.display = 'none';
+            qr.style.display = 'none';
+            direccionCliente.style.display = 'none';
+        } else {
+            camposEstudiante.style.display = 'none';
+            camposCliente.style.display = 'block';
+            qr.style.display = 'none';
+            direccionCliente.style.display = 'none';
+        }
+    });
+
+    // Mostrar QR si se elige transferencia
+    function mostrarQR(metodo) {
+        if(metodo.value === 'transferencia') {
+            qr.style.display = 'block';
+        } else {
+            qr.style.display = 'none';
+        }
+    }
+
+    if(metodoEstudiante) {
+        metodoEstudiante.addEventListener('change', () => mostrarQR(metodoEstudiante));
+    }
+
+    if(metodoCliente) {
+        metodoCliente.addEventListener('change', () => {
+            mostrarQR(metodoCliente);
+            direccionCliente.style.display = metodoCliente.value === 'presencial' ? 'block' : 'none';
+        });
+    }
+
+    // Evitar envío real para pruebas
+    const form = document.getElementById('formPago');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        alert('¡Pago procesado! 💖');
+    });
+</script>
 
 </body>
 </html>
