@@ -1,51 +1,60 @@
-body {
-    font-family: Arial;
-    margin: 0;
-    background: #fff0f6;
-}
-
-header {
-    background: #ff4da6;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-}
-
-.hero {
-    text-align: center;
-    padding: 40px;
-}
-
-.grid {
+.container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
 }
 
 .card {
     background: white;
-    border-radius: 10px;
+    border-radius: 18px;
     padding: 15px;
     text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* asegura que todas las tarjetas tengan la misma altura */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    height: 200px; /* altura uniforme */
+    object-fit: contain; /* mantiene la proporción de la imagen sin distorsionarla */
+    border-radius: 14px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+.price {
+    color: #888;
+    margin: 5px 0;
 }
 
 button {
-    background: #ff4da6;
-    color: white;
+    margin-top: auto; /* empuja el botón al final de la tarjeta */
+    padding: 12px;
+    border-radius: 30px;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    background: #f5a3c7;
+    color: white;
+    font-size: 14px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ec8fb8;
 }
