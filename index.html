@@ -682,3 +682,240 @@ footer{
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bloom Beauty ✨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fuentes bonitas -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        html, body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #fff0f6;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 35px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: #b30059;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4d8d;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 70px 20px 50px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: #b30059;
+        }
+
+        .hero p {
+            color: #777;
+            font-size: 16px;
+        }
+
+        .heart {
+            color: #ff4d8d;
+        }
+
+        /* BOTONES */
+        .buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            border: none;
+            margin: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #ff4d8d;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #e63c78;
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            background: white;
+            color: #ff4d8d;
+            border: 1px solid #ff4d8d;
+        }
+
+        .secondary:hover {
+            background: #ff4d8d;
+            color: white;
+        }
+
+        /* SECCIONES */
+        .section {
+            background: white;
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #b30059;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* MINI CARRITO */
+        .mini-carrito {
+            background: #ffe4f1;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 18px;
+        }
+
+        .mini-carrito h3 {
+            margin-top: 0;
+            color: #b30059;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        li {
+            margin: 6px 0;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 40px;
+            padding: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Bloom Beauty ✨</div>
+
+    <nav>
+        <a href="productos.html">Productos</a>
+        <a href="pagos.html">Pagos</a>
+        <a href="faq.html">FAQ</a>
+        <a href="checkout.html">Finalizar compra</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Bienvenida <span class="heart">❤</span></h1>
+    <p>Tu espacio de belleza, brillo y estilo ✨</p>
+
+    <div class="buttons">
+        <button class="btn primary" onclick="location.href='productos.html'">
+            Ver productos 💄
+        </button>
+
+        <button class="btn secondary" onclick="location.href='checkout.html'">
+            Finalizar pedido 🛍
+        </button>
+    </div>
+</section>
+
+<div class="section">
+    <h2>🌸 Sobre Bloom Beauty</h2>
+    <p>
+        Una tienda estética, delicada y creada para resaltar tu belleza ✨
+    </p>
+</div>
+
+<div class="mini-carrito">
+    <h3>🛒 Tu carrito</h3>
+    <ul id="mini-lista"></ul>
+</div>
+
+<footer>
+    Bloom Beauty ✨ | Experiencia estética & elegante 💖
+</footer>
+
+<script>
+
+function mostrarMiniCarrito(){
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let lista = document.getElementById('mini-lista');
+    lista.innerHTML = '';
+
+    if(carrito.length === 0){
+        lista.innerHTML = '<li>Tu carrito está vacío ✨</li>';
+        return;
+    }
+
+    carrito.forEach(p => {
+        lista.innerHTML += `<li>${p.nombre} - $${p.precio}</li>`;
+    });
+}
+
+mostrarMiniCarrito();
+
+</script>
+
+</body>
+</html>
