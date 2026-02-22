@@ -1,182 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Carrito | Bloom Beauty</title>
+    <meta charset="UTF-8">
+    <title>Carrito | Bloom Beauty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-<style>
+    <style>
 
-body{
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background:linear-gradient(180deg,#fff,#fff0f6);
-    color:#333;
-}
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #fff0f6;
+            color: #333;
+        }
 
-.title{
-    text-align:center;
-    padding:40px;
-    font-family:'Playfair Display', serif;
-    font-size:28px;
-}
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 40px;
+            border-bottom: 1px solid #f1f1f1;
+            background: white;
+            position: sticky;
+            top: 0;
+        }
 
-.container{
-    max-width:650px;
-    margin:auto;
-    padding:20px;
-}
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+        }
 
-.item{
-    background:white;
-    padding:18px;
-    border-radius:20px;
-    margin-bottom:12px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 6px 12px rgba(0,0,0,0.05);
-}
+        nav {
+            display: flex;
+            gap: 25px;
+        }
 
-.nombre{
-    font-weight:500;
-}
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+        }
 
-.cantidad{
-    font-size:14px;
-    color:#777;
-}
+        nav a:hover {
+            color: #f5a3c7;
+        }
 
-.eliminar{
-    cursor:pointer;
-    font-size:18px;
-    color:#ff4da6;
-}
+        .title {
+            text-align: center;
+            padding: 50px 20px 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+        }
 
-.total{
-    text-align:center;
-    font-size:22px;
-    margin-top:20px;
-    font-weight:600;
-}
+        .carrito-container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
 
-button{
-    margin-top:15px;
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:25px;
-    background:#f5a3c7;
-    color:white;
-    font-size:15px;
-    cursor:pointer;
-}
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
 
-.ticket{
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    margin-top:20px;
-    box-shadow:0 6px 12px rgba(0,0,0,0.05);
-    font-size:14px;
-    line-height:1.6;
-}
+        .eliminar {
+            cursor: pointer;
+            color: #ff4da6;
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-</style>
+        .total {
+            text-align: right;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+            color: #ff4da6;
+        }
+
+        .continuar {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 25px;
+            border: none;
+            background: #f5a3c7;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .continuar:hover {
+            background: #ec8fb8;
+        }
+
+    </style>
 </head>
 
 <body>
 
-<div class="title">Tu Pedido 💖</div>
+<header>
+    <div class="logo">Bloom Beauty ✨</div>
 
-<div class="container" id="lista"></div>
-<div class="total" id="total"></div>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="carrito.html">Carrito</a>
+    </nav>
+</header>
 
-<div class="container">
-<button onclick="enviarPedido()">Finalizar Pedido ✨</button>
-<button onclick="vaciar()">Vaciar carrito 🗑</button>
+<div class="title">
+    Tu Carrito 🛒
 </div>
 
-<div class="container">
-<div class="ticket" id="ticket"></div>
+<div class="carrito-container" id="lista-carrito">
 </div>
 
 <script>
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-function mostrar(){
+function dibujarCarrito() {
 
-    const lista = document.getElementById("lista");
-    const totalDiv = document.getElementById("total");
-    const ticketDiv = document.getElementById("ticket");
+    const contenedor = document.getElementById("lista-carrito");
 
-    lista.innerHTML="";
-    ticketDiv.innerHTML="";
-
-    if(carrito.length===0){
-        lista.innerHTML="Tu carrito está vacío 💖";
-        totalDiv.innerHTML="";
+    if (carrito.length === 0) {
+        contenedor.innerHTML = "<p>Tu carrito está vacío 😢</p>";
         return;
     }
 
-    let total=0;
-    let ticket="🛍 *Bloom Beauty*\n\n";
+    let html = "";
+    let total = 0;
 
-    carrito.forEach((p,index)=>{
+    carrito.forEach((item, index) => {
+        total += item.precio;
 
-        const subtotal = p.precio * p.cantidad;
-        total+=subtotal;
-
-        lista.innerHTML+=`
-        <div class="item">
-            <div>
-                <div class="nombre">${p.nombre}</div>
-                <div class="cantidad">Cantidad: ${p.cantidad}</div>
-                <div>$${subtotal.toFixed(2)}</div>
+        html += `
+            <div class="item">
+                <div>${item.nombre} — $${item.precio.toFixed(2)}</div>
+                <div class="eliminar" onclick="eliminar(${index})">✕</div>
             </div>
-            <div class="eliminar" onclick="eliminar(${index})">
-                ✖
-            </div>
-        </div>`;
-
-        ticket+=`• ${p.nombre} x${p.cantidad} — $${subtotal.toFixed(2)}\n`;
+        `;
     });
 
-    totalDiv.innerHTML=`Total: $${total.toFixed(2)} 💕`;
+    html += `<div class="total">Total: $${total.toFixed(2)}</div>`;
+    html += `<button class="continuar">Continuar con el pago 💖</button>`;
 
-    ticket+=`\n💰 Total: $${total.toFixed(2)}`;
-
-    ticketDiv.innerText=ticket;
+    contenedor.innerHTML = html;
 }
 
-function eliminar(index){
-
-    carrito.splice(index,1);
-
-    localStorage.setItem("carrito",JSON.stringify(carrito));
-
-    mostrar();
+function eliminar(index) {
+    carrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    dibujarCarrito();
 }
 
-function vaciar(){
-
-    carrito=[];
-    localStorage.removeItem("carrito");
-
-    mostrar();
-}
-
-function enviarPedido(){
-
-    const mensaje = document.getElementById("ticket").innerText;
-    const numero = "593XXXXXXXXX"; // ← TU NUMERO
-
-    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`);
-}
-
-mostrar();
+dibujarCarrito();
 
 </script>
 
