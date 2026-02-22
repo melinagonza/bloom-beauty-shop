@@ -1,117 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Carrito | Bloom Beauty</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Carrito | Bloom Beauty</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-    <style>
+<style>
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(180deg, #fff, #fff0f6);
-            color: #333;
-        }
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:linear-gradient(180deg,#fff,#fff0f6);
+    color:#333;
+}
 
-        .title {
-            text-align: center;
-            padding: 40px;
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-        }
+.title{
+    text-align:center;
+    padding:50px;
+    font-family:'Playfair Display', serif;
+    font-size:30px;
+}
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-        }
+.container{
+    max-width:600px;
+    margin:auto;
+    padding:20px;
+}
 
-        .item {
-            background: white;
-            padding: 15px;
-            border-radius: 18px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
+.item{
+    background:white;
+    padding:15px;
+    border-radius:18px;
+    margin-bottom:10px;
+    display:flex;
+    justify-content:space-between;
+    box-shadow:0 6px 12px rgba(0,0,0,0.05);
+}
 
-        .precio {
-            color: #888;
-        }
+.eliminar{
+    cursor:pointer;
+    color:#ff4da6;
+}
 
-        .eliminar {
-            cursor: pointer;
-            color: #ff4da6;
-        }
+.total{
+    text-align:center;
+    font-size:22px;
+    margin-top:20px;
+    font-weight:600;
+}
 
-        .total {
-            text-align: center;
-            font-size: 20px;
-            margin-top: 20px;
-        }
+button{
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:25px;
+    background:#f5a3c7;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
 
-    </style>
+</style>
 </head>
 
 <body>
 
-<div class="title">
-    Tu Carrito 🛒
-</div>
+<div class="title">Tu Carrito 🛒</div>
 
 <div class="container" id="lista"></div>
-
 <div class="total" id="total"></div>
+
+<div class="container">
+<button onclick="comprar()">Continuar con el pago ✨</button>
+</div>
 
 <script>
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-function mostrar() {
+function mostrar(){
 
     const lista = document.getElementById("lista");
     const totalDiv = document.getElementById("total");
 
-    lista.innerHTML = "";
+    lista.innerHTML="";
 
-    if(carrito.length === 0){
-        lista.innerHTML = "Tu carrito está vacío 💖";
-        totalDiv.innerHTML = "";
+    if(carrito.length===0){
+        lista.innerHTML="Tu carrito está vacío 💖";
+        totalDiv.innerHTML="";
         return;
     }
 
-    let total = 0;
+    let total=0;
 
-    carrito.forEach((producto, index) => {
+    carrito.forEach((precio,index)=>{
 
-        total += producto.precio;
+        total+=precio;
 
-        lista.innerHTML += `
-            <div class="item">
-                <div>
-                    <strong>${producto.nombre}</strong>
-                    <div class="precio">$${producto.precio.toFixed(2)}</div>
-                </div>
-                <div class="eliminar" onclick="eliminar(${index})">
-                    ✖
-                </div>
+        lista.innerHTML+=`
+        <div class="item">
+            <div>
+                Producto ✨
+                <div>$${precio.toFixed(2)}</div>
             </div>
-        `;
+            <div class="eliminar" onclick="eliminar(${index})">
+                ✖
+            </div>
+        </div>`;
     });
 
-    totalDiv.innerHTML = `Total: $${total.toFixed(2)} ✨`;
+    totalDiv.innerHTML=`Total: $${total.toFixed(2)} 💖`;
 }
 
-function eliminar(index) {
+function eliminar(index){
 
-    carrito.splice(index, 1);
+    carrito.splice(index,1);
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem("carrito",JSON.stringify(carrito));
 
     mostrar();
+}
+
+function comprar(){
+    alert("Aquí iría el pago 😌✨");
 }
 
 mostrar();
