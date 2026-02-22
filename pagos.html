@@ -1,98 +1,103 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Pagos | Bloom Beauty</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Pagos | Bloom Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            background: #fff;
-            color: #333;
-        }
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background: #fff;
+        color: #333;
+    }
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 40px;
-            border-bottom: 1px solid #f1f1f1;
-            background: white;
-        }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 40px;
+        border-bottom: 1px solid #f1f1f1;
+        background: white;
+    }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 600;
-        }
+    .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 26px;
+        font-weight: 600;
+    }
 
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
 
-        h2, h3 {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 20px;
-        }
+    h2, h3 {
+        text-align: center;
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 20px;
+    }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
 
-        label {
-            font-weight: 500;
-        }
+    label {
+        font-weight: 500;
+    }
 
-        input, select, textarea {
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 14px;
-            width: 100%;
-        }
+    input, select, textarea {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        width: 100%;
+    }
 
-        button {
-            padding: 12px;
-            border-radius: 30px;
-            border: none;
-            background: #f5a3c7;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+    button {
+        padding: 12px;
+        border-radius: 30px;
+        border: none;
+        background: #f5a3c7;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
 
-        button:hover {
-            background: #ec8fb8;
-        }
+    button:hover {
+        background: #ec8fb8;
+    }
 
-        #qrTransferencia {
-            display: none;
-            text-align: center;
-            margin-top: 15px;
-        }
+    #qrTransferencia {
+        display: none;
+        text-align: center;
+        margin-top: 15px;
+    }
 
-        #qrTransferencia img {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 10px;
-        }
+    #qrTransferencia img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
 
-        /* Separación entre formularios */
-        .form-separator {
-            margin: 40px 0 20px 0;
-            border-top: 2px solid #f5a3c7;
-        }
-    </style>
+    #formularioContactar {
+        display: none; /* Inicialmente oculto */
+        margin-top: 30px;
+    }
+
+    .form-separator {
+        margin: 40px 0 20px 0;
+        border-top: 2px solid #f5a3c7;
+    }
+</style>
 </head>
 <body>
 
@@ -116,16 +121,16 @@
         <!-- CAMPOS PARA ESTUDIANTE -->
         <div id="camposEstudiante" style="display:none;">
             <label for="nombreEstudiante">Nombre completo</label>
-            <input type="text" id="nombreEstudiante" name="nombreEstudiante" placeholder="Tu nombre completo">
+            <input type="text" id="nombreEstudiante" name="nombreEstudiante" placeholder="Tu nombre completo" required>
 
             <label for="curso">Curso</label>
-            <input type="text" id="curso" name="curso" placeholder="Ej: 10">
+            <input type="text" id="curso" name="curso" placeholder="Ej: 10" required>
 
             <label for="paralelo">Paralelo</label>
-            <input type="text" id="paralelo" name="paralelo" placeholder="Ej: A">
+            <input type="text" id="paralelo" name="paralelo" placeholder="Ej: A" required>
 
             <label for="metodoEstudiante">Forma de pago</label>
-            <select id="metodoEstudiante" name="metodoEstudiante">
+            <select id="metodoEstudiante" name="metodoEstudiante" required>
                 <option value="" disabled selected>Selecciona el método</option>
                 <option value="presencial">Presencial</option>
                 <option value="transferencia">Transferencia</option>
@@ -135,10 +140,10 @@
         <!-- CAMPOS PARA CLIENTE -->
         <div id="camposCliente" style="display:none;">
             <label for="nombreCliente">Nombre completo</label>
-            <input type="text" id="nombreCliente" name="nombreCliente" placeholder="Tu nombre completo">
+            <input type="text" id="nombreCliente" name="nombreCliente" placeholder="Tu nombre completo" required>
 
             <label for="metodoCliente">Forma de pago</label>
-            <select id="metodoCliente" name="metodoCliente">
+            <select id="metodoCliente" name="metodoCliente" required>
                 <option value="" disabled selected>Selecciona el método</option>
                 <option value="presencial">Presencial</option>
                 <option value="transferencia">Transferencia</option>
@@ -165,26 +170,27 @@
         <label for="comprobante">Subir comprobante (opcional si es presencial)</label>
         <input type="file" id="comprobante" name="comprobante" accept="image/*,application/pdf">
 
-        <button type="submit">Finalizar Pago</button>
+        <!-- Botón para continuar con el pago -->
+        <button type="button" id="continuarPago">Continuar con el pago</button>
     </form>
 
-    <!-- Separador -->
-    <div class="form-separator"></div>
+    <!-- Formulario Formspree oculto hasta continuar -->
+    <div id="formularioContactar">
+        <div class="form-separator"></div>
+        <h3>¿Tienes dudas o quieres pedir algo especial?</h3>
+        <form action="https://formspree.io/f/2943058793346367415" method="POST">
+            <label>Nombre:</label>
+            <input type="text" name="name" required>
 
-    <!-- FORMULARIO DE CONTACTO FORMSPREE -->
-    <h3>¿Tienes dudas o quieres pedir algo especial?</h3>
-    <form action="https://formspree.io/f/2943058793346367415" method="POST">
-        <label>Nombre:</label>
-        <input type="text" name="name" required>
+            <label>Correo:</label>
+            <input type="email" name="email" required>
 
-        <label>Correo:</label>
-        <input type="email" name="email" required>
+            <label>Mensaje / Producto:</label>
+            <textarea name="message" rows="4" required></textarea>
 
-        <label>Mensaje / Producto:</label>
-        <textarea name="message" rows="4" required></textarea>
-
-        <button type="submit">Enviar</button>
-    </form>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 
 </div>
 
@@ -196,6 +202,8 @@
     const metodoCliente = document.getElementById('metodoCliente');
     const direccionCliente = document.getElementById('direccionCliente');
     const qr = document.getElementById('qrTransferencia');
+    const formularioContactar = document.getElementById('formularioContactar');
+    const btnContinuar = document.getElementById('continuarPago');
 
     // Mostrar campos según tipo de cliente
     tipoCliente.addEventListener('change', () => {
@@ -232,11 +240,10 @@
         });
     }
 
-    // Evitar envío real del formulario de pago para pruebas
-    const formPago = document.getElementById('formPago');
-    formPago.addEventListener('submit', e => {
-        e.preventDefault();
-        alert('¡Pago procesado! 💖');
+    // Mostrar formulario Formspree al hacer clic en "Continuar con el pago"
+    btnContinuar.addEventListener('click', () => {
+        formularioContactar.style.display = 'block';
+        btnContinuar.scrollIntoView({behavior: "smooth"});
     });
 </script>
 
