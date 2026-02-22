@@ -36,7 +36,7 @@
             padding: 0 20px;
         }
 
-        h2 {
+        h2, h3 {
             text-align: center;
             font-family: 'Playfair Display', serif;
             margin-bottom: 20px;
@@ -52,7 +52,7 @@
             font-weight: 500;
         }
 
-        input, select {
+        input, select, textarea {
             padding: 10px;
             border-radius: 6px;
             border: 1px solid #ccc;
@@ -75,7 +75,6 @@
             background: #ec8fb8;
         }
 
-        /* QR */
         #qrTransferencia {
             display: none;
             text-align: center;
@@ -86,6 +85,12 @@
             width: 200px;
             height: 200px;
             margin-bottom: 10px;
+        }
+
+        /* Separación entre formularios */
+        .form-separator {
+            margin: 40px 0 20px 0;
+            border-top: 2px solid #f5a3c7;
         }
     </style>
 </head>
@@ -111,16 +116,16 @@
         <!-- CAMPOS PARA ESTUDIANTE -->
         <div id="camposEstudiante" style="display:none;">
             <label for="nombreEstudiante">Nombre completo</label>
-            <input type="text" id="nombreEstudiante" placeholder="Tu nombre completo">
+            <input type="text" id="nombreEstudiante" name="nombreEstudiante" placeholder="Tu nombre completo">
 
             <label for="curso">Curso</label>
-            <input type="text" id="curso" placeholder="Ej: 10">
+            <input type="text" id="curso" name="curso" placeholder="Ej: 10">
 
             <label for="paralelo">Paralelo</label>
-            <input type="text" id="paralelo" placeholder="Ej: A">
+            <input type="text" id="paralelo" name="paralelo" placeholder="Ej: A">
 
             <label for="metodoEstudiante">Forma de pago</label>
-            <select id="metodoEstudiante">
+            <select id="metodoEstudiante" name="metodoEstudiante">
                 <option value="" disabled selected>Selecciona el método</option>
                 <option value="presencial">Presencial</option>
                 <option value="transferencia">Transferencia</option>
@@ -130,10 +135,10 @@
         <!-- CAMPOS PARA CLIENTE -->
         <div id="camposCliente" style="display:none;">
             <label for="nombreCliente">Nombre completo</label>
-            <input type="text" id="nombreCliente" placeholder="Tu nombre completo">
+            <input type="text" id="nombreCliente" name="nombreCliente" placeholder="Tu nombre completo">
 
             <label for="metodoCliente">Forma de pago</label>
-            <select id="metodoCliente">
+            <select id="metodoCliente" name="metodoCliente">
                 <option value="" disabled selected>Selecciona el método</option>
                 <option value="presencial">Presencial</option>
                 <option value="transferencia">Transferencia</option>
@@ -142,10 +147,10 @@
             <!-- DIRECCIÓN SOLO PARA CLIENTE PRESENCIAL -->
             <div id="direccionCliente" style="display:none;">
                 <label for="direccion">Dirección</label>
-                <input type="text" id="direccion" placeholder="Tu dirección">
+                <input type="text" id="direccion" name="direccion" placeholder="Tu dirección">
 
                 <label for="numeroCasa">Número de casa</label>
-                <input type="text" id="numeroCasa" placeholder="Número de casa">
+                <input type="text" id="numeroCasa" name="numeroCasa" placeholder="Número de casa">
             </div>
         </div>
 
@@ -158,10 +163,29 @@
 
         <!-- Subir comprobante -->
         <label for="comprobante">Subir comprobante (opcional si es presencial)</label>
-        <input type="file" id="comprobante" accept="image/*,application/pdf">
+        <input type="file" id="comprobante" name="comprobante" accept="image/*,application/pdf">
 
         <button type="submit">Finalizar Pago</button>
     </form>
+
+    <!-- Separador -->
+    <div class="form-separator"></div>
+
+    <!-- FORMULARIO DE CONTACTO FORMSPREE -->
+    <h3>¿Tienes dudas o quieres pedir algo especial?</h3>
+    <form action="https://formspree.io/f/2943058793346367415" method="POST">
+        <label>Nombre:</label>
+        <input type="text" name="name" required>
+
+        <label>Correo:</label>
+        <input type="email" name="email" required>
+
+        <label>Mensaje / Producto:</label>
+        <textarea name="message" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
 </div>
 
 <script>
@@ -208,9 +232,9 @@
         });
     }
 
-    // Evitar envío real para pruebas
-    const form = document.getElementById('formPago');
-    form.addEventListener('submit', e => {
+    // Evitar envío real del formulario de pago para pruebas
+    const formPago = document.getElementById('formPago');
+    formPago.addEventListener('submit', e => {
         e.preventDefault();
         alert('¡Pago procesado! 💖');
     });
