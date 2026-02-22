@@ -249,9 +249,10 @@ function agregar(nombre, precio) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito.push({nombre, precio});
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert("Producto añadido 💖");
+    alert("Producto añadido al carrito 💖");
 }
 </script>
 
 </body>
 </html>
+
