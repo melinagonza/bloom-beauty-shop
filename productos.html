@@ -221,11 +221,18 @@
 <div id="total-flotante-container">Total: <span id="total-flotante">$0.00</span></div>
 
 <script>
-let carrito = [];
-let contador = 0;
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let contador = carrito.length;
+
+actualizar();
 
 function agregar(precio) {
+
     carrito.push(precio);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
     contador++;
 
     actualizar();
@@ -234,7 +241,9 @@ function agregar(precio) {
 }
 
 function actualizar() {
+
     document.getElementById("numero-carrito").innerText = contador;
+
     const total = carrito.reduce((a,b)=>a+b,0).toFixed(2);
     document.getElementById("total-flotante").innerText = "$" + total;
 }
@@ -250,7 +259,9 @@ function notificar() {
     notif.classList.add("mostrar");
     setTimeout(()=>notif.classList.remove("mostrar"),1200);
 }
+
 </script>
 
 </body>
 </html>
+
