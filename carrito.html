@@ -16,42 +16,15 @@
             color: #333;
         }
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 40px;
-            border-bottom: 1px solid #f1f1f1;
-            background: white;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-area img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 600;
-        }
-
         .title {
             text-align: center;
-            padding: 40px 20px 10px;
+            padding: 40px;
             font-family: 'Playfair Display', serif;
             font-size: 30px;
         }
 
-        .carrito-container {
-            max-width: 700px;
+        .container {
+            max-width: 600px;
             margin: auto;
             padding: 20px;
         }
@@ -60,26 +33,17 @@
             background: white;
             padding: 15px;
             border-radius: 18px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-        }
-
-        .item-info {
-            display: flex;
-            flex-direction: column;
         }
 
         .precio {
-            color: #999;
-            font-size: 14px;
+            color: #888;
         }
 
         .eliminar {
             cursor: pointer;
-            font-size: 18px;
             color: #ff4da6;
         }
 
@@ -87,29 +51,6 @@
             text-align: center;
             font-size: 20px;
             margin-top: 20px;
-            font-weight: 600;
-        }
-
-        button {
-            margin-top: 20px;
-            width: 100%;
-            padding: 14px;
-            border-radius: 25px;
-            border: none;
-            background: #f5a3c7;
-            color: white;
-            font-size: 15px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #ec8fb8;
-        }
-
-        .vacio {
-            text-align: center;
-            color: #999;
-            margin-top: 40px;
         }
 
     </style>
@@ -117,40 +58,27 @@
 
 <body>
 
-<header>
-    <div class="logo-area">
-        <img src="img/logo.png">
-        <div class="logo">Bloom Beauty ✨</div>
-    </div>
-</header>
-
 <div class="title">
     Tu Carrito 🛒
 </div>
 
-<div class="carrito-container" id="lista-carrito">
-</div>
+<div class="container" id="lista"></div>
 
-<div class="total" id="total">
-</div>
-
-<div class="carrito-container">
-    <button onclick="finalizarCompra()">Continuar con el pago ✨</button>
-</div>
+<div class="total" id="total"></div>
 
 <script>
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-function mostrarCarrito() {
+function mostrar() {
 
-    const lista = document.getElementById("lista-carrito");
+    const lista = document.getElementById("lista");
     const totalDiv = document.getElementById("total");
 
     lista.innerHTML = "";
 
     if(carrito.length === 0){
-        lista.innerHTML = "<div class='vacio'>Tu carrito está vacío 💖</div>";
+        lista.innerHTML = "Tu carrito está vacío 💖";
         totalDiv.innerHTML = "";
         return;
     }
@@ -163,11 +91,11 @@ function mostrarCarrito() {
 
         lista.innerHTML += `
             <div class="item">
-                <div class="item-info">
+                <div>
                     <strong>${producto.nombre}</strong>
                     <div class="precio">$${producto.precio.toFixed(2)}</div>
                 </div>
-                <div class="eliminar" onclick="eliminarProducto(${index})">
+                <div class="eliminar" onclick="eliminar(${index})">
                     ✖
                 </div>
             </div>
@@ -177,21 +105,16 @@ function mostrarCarrito() {
     totalDiv.innerHTML = `Total: $${total.toFixed(2)} ✨`;
 }
 
-function eliminarProducto(index) {
+function eliminar(index) {
 
     carrito.splice(index, 1);
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    mostrarCarrito();
+    mostrar();
 }
 
-function finalizarCompra() {
-
-    alert("Aquí iría el pago 😌✨");
-}
-
-mostrarCarrito();
+mostrar();
 
 </script>
 
