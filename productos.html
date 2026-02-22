@@ -223,38 +223,42 @@
 <script>
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-let contador = carrito.length;
 
 actualizar();
 
-function agregar(precio) {
+function agregar(nombre, precio){
 
-    carrito.push(precio);
+    const existente = carrito.find(p => p.nombre === nombre);
+
+    if(existente){
+        existente.cantidad++;
+    } else {
+        carrito.push({nombre, precio, cantidad:1});
+    }
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    contador++;
 
     actualizar();
     animar();
     notificar();
 }
 
-function actualizar() {
+function actualizar(){
 
+    const contador = carrito.reduce((acc,p)=>acc+p.cantidad,0);
     document.getElementById("numero-carrito").innerText = contador;
 
-    const total = carrito.reduce((a,b)=>a+b,0).toFixed(2);
+    const total = carrito.reduce((acc,p)=>acc+(p.precio*p.cantidad),0).toFixed(2);
     document.getElementById("total-flotante").innerText = "$" + total;
 }
 
-function animar() {
+function animar(){
     const icono = document.getElementById("icono-carrito");
     icono.classList.add("pop");
     setTimeout(()=>icono.classList.remove("pop"),300);
 }
 
-function notificar() {
+function notificar(){
     const notif = document.getElementById("notificacion-carrito");
     notif.classList.add("mostrar");
     setTimeout(()=>notif.classList.remove("mostrar"),1200);
@@ -264,4 +268,5 @@ function notificar() {
 
 </body>
 </html>
+
 
