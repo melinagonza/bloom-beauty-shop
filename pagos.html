@@ -36,26 +36,44 @@ header {
     padding: 25px;
     border-radius: 18px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
 }
 
 h2 {
-    text-align: center;
     font-family: 'Playfair Display', serif;
     color: #f50087;
     margin-bottom: 10px;
 }
 
 .descripcion {
-    text-align: center;
     font-size: 14px;
     color: #777;
     margin-bottom: 25px;
 }
 
-.formulario-box {
+button {
+    background: #f50087;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ec8fb8;
+    transform: scale(1.03);
+}
+
+#formularioPedido {
+    display: none;
+    margin-top: 30px;
     background: #fff0f6;
     padding: 15px;
     border-radius: 14px;
+    animation: aparecer 0.4s ease;
 }
 
 iframe {
@@ -65,8 +83,18 @@ iframe {
     border-radius: 10px;
 }
 
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .footer-text {
-    text-align: center;
     font-size: 12px;
     color: #999;
     margin-top: 15px;
@@ -83,13 +111,18 @@ iframe {
 
 <div class="container">
 
-    <h2>Completa tu pedido 💖</h2>
+    <h2>Finalizar pedido 💖</h2>
 
     <div class="descripcion">
-        Llena el formulario para procesar tu compra ✨
+        Presiona el botón para completar tu compra ✨
     </div>
 
-    <div class="formulario-box">
+    <button id="btnContinuar">
+        Continuar con el pago 💕
+    </button>
+
+    <!-- FORMULARIO -->
+    <div id="formularioPedido">
 
         <iframe 
             src="https://form.jotform.com/260528454034050">
@@ -102,6 +135,27 @@ iframe {
     </div>
 
 </div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const boton = document.getElementById("btnContinuar");
+    const formulario = document.getElementById("formularioPedido");
+
+    boton.addEventListener("click", function() {
+
+        formulario.style.display = "block";
+
+        formulario.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
