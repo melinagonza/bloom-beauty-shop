@@ -1,282 +1,238 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Productos | Bloom Beauty</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Productos | Bloom Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-    <style>
+<style>
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #fff;
-            color: #333;
-        }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #333;
+}
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 40px;
-            border-bottom: 1px solid #f1f1f1;
-            background: white;
-            position: sticky;
-            top: 0;
-        }
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    border-bottom: 1px solid #f1f1f1;
+    background: white;
+    position: sticky;
+    top: 0;
+}
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-        .logo-area img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-        }
+.logo-area img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 600;
-        }
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+}
 
-        nav {
-            display: flex;
-            gap: 25px;
-        }
+nav {
+    display: flex;
+    gap: 25px;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #555;
-            font-size: 14px;
-            font-weight: 500;
-        }
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
 
-        nav a:hover {
-            color: #f5a3c7;
-        }
+nav a:hover {
+    color: #f5a3c7;
+}
 
-        #icono-carrito {
-            font-size: 18px;
-            cursor: pointer;
-        }
+#icono-carrito {
+    font-size: 18px;
+    cursor: pointer;
+}
 
-        #numero-carrito {
-            background: #f5a3c7;
-            color: white;
-            font-size: 12px;
-            padding: 3px 7px;
-            border-radius: 50%;
-            margin-left: 5px;
-        }
+#numero-carrito {
+    background: #f5a3c7;
+    color: white;
+    font-size: 12px;
+    padding: 3px 7px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
 
-        .title {
-            text-align: center;
-            padding: 60px 20px 30px;
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            background: #fff0f6;
-        }
+.title {
+    text-align: center;
+    padding: 60px 20px 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    background: #fff0f6;
+}
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            padding: 40px;
-            max-width: 1100px;
-            margin: auto;
-            background: #fff0f6;
-        }
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+    background: #fff0f6;
+}
 
-        .card {
-            background: white;
-            border-radius: 18px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            transition: 0.3s;
-        }
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.card:hover {
+    transform: translateY(-5px);
+}
 
-        .card img {
-            width: 100%;
-            border-radius: 14px;
-        }
+.card-img-container {
+    position: relative;
+    overflow: hidden;
+}
 
-        .price {
-            color: #888;
-            margin: 5px 0;
-        }
+.card-img-container img {
+    width: 100%;
+    border-radius: 14px;
+    display: block;
+}
 
-        button {
-            margin-top: 10px;
-            padding: 10px 22px;
-            border-radius: 25px;
-            border: none;
-            background: #f5a3c7;
-            color: white;
-            cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+.agotado-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 77, 166, 0.9);
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 2;
+}
 
-        button:hover {
-            background: #ec8fb8;
-        }
+.card.agotado img {
+    opacity: 0.5;
+}
 
-        .pop {
-            animation: popCarrito 0.3s ease;
-        }
+.card.agotado button {
+    background: #ccc !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
 
-        @keyframes popCarrito {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.25); }
-            100% { transform: scale(1); }
-        }
+.price {
+    color: #888;
+    margin: 5px 0;
+}
 
-        #notificacion-carrito {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ff4da6;
-            color: white;
-            padding: 12px 18px;
-            border-radius: 20px;
-            font-size: 14px;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: 0.3s ease;
-        }
+button {
+    margin-top: 10px;
+    padding: 10px 22px;
+    border-radius: 25px;
+    border: none;
+    background: #f5a3c7;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
 
-        #notificacion-carrito.mostrar {
-            opacity: 1;
-            transform: translateY(0);
-        }
+button:hover {
+    background: #ec8fb8;
+}
 
-        #total-flotante-container {
-            position: fixed;
-            bottom: 70px;
-            right: 20px;
-            background: white;
-            padding: 10px 16px;
-            border-radius: 18px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            font-weight: bold;
-            color: #ff4da6;
-        }
-
-    </style>
+</style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo-area">
-        <img src="img/logo.png">
-        <div class="logo">Bloom Beauty ✨</div>
-    </div>
+<div class="logo-area">
+<img src="img/logo.png">
+<div class="logo">Bloom Beauty ✨</div>
+</div>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="carrito.html">Carrito</a>
-    </nav>
+<nav>
+<a href="index.html">Inicio</a>
+<a href="productos.html">Productos</a>
+<a href="carrito.html">Carrito</a>
+</nav>
 
-    <div id="icono-carrito" onclick="location.href='carrito.html'">
-        🛒 <span id="numero-carrito">0</span>
-    </div>
+<div id="icono-carrito" onclick="location.href='carrito.html'">
+🛒 <span id="numero-carrito">0</span>
+</div>
 </header>
 
-<div class="title">
-    Nuestros Productos ✨
-</div>
+<div class="title">Nuestros Productos ✨</div>
 
 <div class="container">
 
-    <div class="card"><img src="img/gloss.png"><h3>Gloss</h3><div class="price">$1.00</div><button onclick="agregar('Gloss', 1)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/glossconcolor.png"><h3>Gloss con Color</h3><div class="price">$1.50</div><button onclick="agregar('Gloss con Color', 1.50)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/delineadordelabios.png"><h3>Delineador</h3><div class="price">$1.50</div><button onclick="agregar('Delineador', 1.50)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/blush3en1.png"><h3>Rubor / Iluminador / Sombra</h3><div class="price">$1.75</div><button onclick="agregar('Rubor / Iluminador / Sombra', 1.75)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/pirmer.png"><h3>Primer</h3><div class="price">$1.50</div><button onclick="agregar('Primer', 1.50)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/serumdepestañas.png"><h3>Serum de Pestañas</h3><div class="price">$3.00</div><button onclick="agregar('Serum de Pestañas', 3)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/mascarillas.png"><h3>Mascarillas</h3><div class="price">$0.75</div><button onclick="agregar('Mascarilla', 0.75)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/parchesparalosojos.png"><h3>Parches Ojos</h3><div class="price">$0.75</div><button onclick="agregar('Parche para Ojos', 0.75)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/sponjas.png"><h3>Beauty Blender</h3><div class="price">$1.00</div><button onclick="agregar('Esponja', 1)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/tintadelabios.png"><h3>Tinta</h3><div class="price">$1.00</div><button onclick="agregar('Tinta', 1)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/dupdior.png"><h3>Dior con Brillos</h3><div class="price">$1.00</div><button onclick="agregar('Dior con Brillos', 1)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/dupdiorrosa.png"><h3>Dior Rosa</h3><div class="price">$1.00</div><button onclick="agregar('Dior Rosa', 1)">Añadir al carrito</button></div>
-
-    <div class="card"><img src="img/fresa.png"><h3>Fresa</h3><div class="price">$1.50</div><button onclick="agregar('Fresa', 1.50)">Añadir al carrito</button></div>
-
+<!-- PRODUCTO NORMAL -->
+<div class="card">
+<div class="card-img-container">
+<img src="img/gloss.png">
+</div>
+<h3>Gloss</h3>
+<div class="price">$1.00</div>
+<button onclick="agregar('Gloss', 1)">Añadir al carrito</button>
 </div>
 
-<div id="notificacion-carrito">💖 Producto añadido al carrito ❤️</div>
-<div id="total-flotante-container">Total: <span id="total-flotante">$0.00</span></div>
+<!-- GLOSS CON COLOR AGOTADO -->
+<div class="card agotado">
+<div class="card-img-container">
+<img src="img/glossconcolor.png">
+<span class="agotado-label">AGOTADO</span>
+</div>
+<h3>Gloss con Color</h3>
+<div class="price">$1.50</div>
+<button disabled>Agotado</button>
+</div>
 
-<script>
+<!-- SERUM AGOTADO -->
+<div class="card agotado">
+<div class="card-img-container">
+<img src="img/serumdepestañas.png">
+<span class="agotado-label">AGOTADO</span>
+</div>
+<h3>Serum de Pestañas</h3>
+<div class="price">$3.00</div>
+<button disabled>Agotado</button>
+</div>
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+<!-- FRESA AGOTADO -->
+<div class="card agotado">
+<div class="card-img-container">
+<img src="img/fresa.png">
+<span class="agotado-label">AGOTADO</span>
+</div>
+<h3>Fresa</h3>
+<div class="price">$1.50</div>
+<button disabled>Agotado</button>
+</div>
 
-actualizar();
-
-function agregar(nombre, precio){
-
-    const existente = carrito.find(p => p.nombre === nombre);
-
-    if(existente){
-        existente.cantidad++;
-    } else {
-        carrito.push({nombre, precio, cantidad:1});
-    }
-
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-
-    actualizar();
-    animar();
-    notificar();
-}
-
-function actualizar(){
-
-    const contador = carrito.reduce((acc,p)=>acc+p.cantidad,0);
-    document.getElementById("numero-carrito").innerText = contador;
-
-    const total = carrito.reduce((acc,p)=>acc+(p.precio*p.cantidad),0).toFixed(2);
-    document.getElementById("total-flotante").innerText = "$" + total;
-}
-
-function animar(){
-    const icono = document.getElementById("icono-carrito");
-    icono.classList.add("pop");
-    setTimeout(()=>icono.classList.remove("pop"),300);
-}
-
-function notificar(){
-    const notif = document.getElementById("notificacion-carrito");
-    notif.classList.add("mostrar");
-    setTimeout(()=>notif.classList.remove("mostrar"),1200);
-}
-
-</script>
+</div>
 
 </body>
 </html>
